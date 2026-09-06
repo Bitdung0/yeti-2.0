@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Guide Version: 1.2
+Guide Version: 1.21
 
 This guide was created using Bitcoin Core's [official multisig-tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/multisig-tutorial.md) and [offline signing tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/offline-signing-tutorial.md) as a reference. 
 
@@ -287,8 +287,6 @@ Insert the transfer USB into the online computer. Copy the multisig_watch_wallet
 
 You can use either bitcoin-cli or bitcoin-qt (Bitcoin Core's graphical user interface) to load this wallet, see the transaction history, check the balance of the wallet, generate receive addresses, and broadcast fully signed Bitcoin Transactions. It is not advised to use Bitcoin-QT to create PSBTs as this can cause errors when signing with the steps in this guide. 
 
-Note: If you encounter an error when loading the "multisig_watch_wallet" into a pruned node see [this solution](wallet_loading_failed.md).
-
 ## Step B6: [\*offline computer\*] Backup Keys
 Now back up each of the 7 keys and the wallet descriptor.
 
@@ -309,7 +307,11 @@ Use brasero to create 7 mdisc backups. These files can be found in the `~/.bitco
 7 = key_7 & multisig_watch_wallet
 
 
-Note: You will not be able to complete section C until your online computer has finished syncing the Bitcoin Blockchain. You can query the status of your node sync by running the following command in the terminal within your online computer.
+Note: You will not be able to complete section C until your online computer has finished syncing the Bitcoin Blockchain.
+
+### How to check sync status
+
+You can query the status of your node sync by running the following command in the terminal within your online computer.
 
 ```
 ~/bitcoin-31.1/bin/bitcoin-cli getblockchaininfo
@@ -345,8 +347,6 @@ Note: You can generate addresses on either your online machine or your offline m
 Note: In order to check balances and generate new addresses the "multisig_watch_wallet" wallet must loaded with either Bitcoin-QT, which is Bitcoin Core's Graphical User Interface (GUI) or with the Bitcoin-cli (see step B5). To use the GUI, simply double click on "Bitcoin-QT" inside of `~/bitcoin-31.1/bin` in the file explorer, then load "multisig_watch_wallet" and generate a receive address for a QR code.
 
 To use the cli, load the wallet like in step B5. 
-
-Note: If you encounter an error when loading the "multisig_watch_wallet" into a pruned node see [this solution](wallet_loading_failed.md).
 
 After loading the wallet, run this command to generate a new address:
 

@@ -147,20 +147,8 @@ In the mean time you could export the xpubs on the transfer USB, and reconstruct
 
 A: You can use a pruned node but it is not reccomended. Pruning will help lower equipment costs for this guide, and a full archival node is not technically a requirement for our purposes. Pruning is perfectly safe from a security perspective, however it can lead to annoying circumstances where you may have to resync the bitcoin blockchain from scratch when loading a wallet. The authors of this guide prefer not to use pruned nodes for this reason.
 
-If wish to use a pruned node you should first copy the `~/bitcoin-31.1/bitcoin.conf` into your `~/.bitcoin` folder. Then you will want to open the `bitcoin.conf` file for editing (use Text Editor unless you know vim or nano).
-
-On a new line (any line that does not start with a `##`) add the following `prune=5500`. This number corresponds to the size of your prune cache. The number provided here is 5.5GB. It is not reccomended that you exceed approximately 70% of your available storage space on your online computer for your prune cache, but a larger prunce cache is better.
-
-If you have 64GB of internal storage space use `prune=10000`.
-
-If you have 128GB of internal storage space use `prune=80000`.
-
-If you have 256GB of internal storage space use `prune=160000`
-
-If you have 512GB of internal storage space use `prune=350000`
-
-If you have 1TB of internal storage space use `prune=750000`
+For more information see the [pruning subguide](pruning.md).
 
 ## Q: What to do about this error on my pruned node: "wallet loading failed. Prune: last wallet synchronization goes beyond pruned data." when importing the "multisig_watch_wallet" in step B5?
 
-A: See [this explainer](wallet_loading_failed.md) and solution.
+A: See [this solution](pruning.md#error-wallet-loading-failed-prune-last-wallet-synchronization-goes-beyond-pruned-data) in the pruning subguide.
