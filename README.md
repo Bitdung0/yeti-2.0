@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Guide Version: 1.21
+Guide Version: 1.22
 
 This guide was created using Bitcoin Core's [official multisig-tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/multisig-tutorial.md) and [offline signing tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/offline-signing-tutorial.md) as a reference. 
 
@@ -260,7 +260,9 @@ desc="wsh(sortedmulti(3,${xpubs["xpub_1"]},${xpubs["xpub_2"]},${xpubs["xpub_3"]}
 
 checksum=$(~/bitcoin-31.1/bin/bitcoin-cli getdescriptorinfo $desc | jq -r '.checksum')
 
-multisig_desc="[{\"desc\": \"${desc}#${checksum}\", \"active\": true, \"timestamp\": \"now\"}]"
+time=$(date +%s)
+
+multisig_desc="[{\"desc\": \"${desc}#${checksum}\", \"active\": true, \"timestamp\": ${time}}]"
 
 ~/bitcoin-31.1/bin/bitcoin-cli -named createwallet "multisig_watch_wallet" true true
 
