@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Guide Version: 1.22
+Guide Version: 1.23
 
 This guide was created using Bitcoin Core's [official multisig-tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/multisig-tutorial.md) and [offline signing tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/offline-signing-tutorial.md) as a reference. 
 
@@ -111,7 +111,7 @@ Again within the same terminal copy and paste the following command to verify th
 cd ~/Downloads && wget -O guix.sigs.tar.gz https://github.com/bitcoin-core/guix.sigs/archive/refs/heads/main.tar.gz
 tar -xzf guix.sigs.tar.gz
 gpg --import guix.sigs-main/builder-keys/*
-gpg --verify SHA256SUMS.asc
+gpg --verify SHA256SUMS.asc SHA256SUMS
 ```
 
 Look for `gpg: Good signature from...` on at least a few Bitcoin Core contributors. If you do not see any good signatures STOP AND DO NOT PROCEED.
