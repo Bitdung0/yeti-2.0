@@ -2,6 +2,8 @@
 
 ## Introduction
 
+The latest version of this guide lives at https://github.com/bowlarbear/yeti-2.0
+
 Guide Version: 1.23
 
 This guide was created using Bitcoin Core's [official multisig-tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/multisig-tutorial.md) and [offline signing tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/offline-signing-tutorial.md) as a reference. 
