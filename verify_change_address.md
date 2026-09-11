@@ -4,6 +4,8 @@ Verifying the change address of a PSBT is a prudent security step when signing a
 
 This is not a necessary step when doing your test transactions during initial setup, because the change amount is very small, however this extra precaution is worth taking anytime you are signing a PSBT with larger amounts of money.
 
+Note: If you are moving the entire contents of the wallet with a single transaction (sweeping all of the funds in one go), you only need to verify the destination address. There will not be a change address to verify. 
+
 ## How to verify change address of a PSBT
 
 To verify the change address of a PSBT on your offline computer, you must have the unsigned.psbt imported onto the desktop of the offline machine. You must then insert any of your key backups and copy the `multisig_watch_wallet` into your `~/.bitcoin/wallets` folder.
@@ -26,7 +28,7 @@ Then decode the PSBT contents:
 ~/bitcoin-31.1/bin/bitcoin-cli decodepsbt "$(cat ~/Desktop/unsigned.psbt)"
 ```
 
-Look through the transaction contents and within `tx.vout` you will see two outputs. One is your destination address that you provided when creating the PSBT and the other is your change address.
+Look through the transaction contents and within `tx.vout` you should see two outputs. One is your destination address that you provided when creating the PSBT and the other is your change address.
 
 You should run the following command in the terminal (replacing `$change_address` with the actual change address obtained from `decodepsbt`) to verify that it belongs to your wallet:
 
