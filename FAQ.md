@@ -33,7 +33,7 @@ The fewer trusted 3rd parties you put between yourself and your Bitcoin, the bet
 
 A: Yes, they do. The more appropriate question is what are the range of options available to us and how do they compare? All else being equal, speciality hardware designed and sold for use with Bitcoin is significantly easier and cheaper for attackers to target across the supply chain than generic hardware sold for general purpose use.  
 
-This does not mean there can never be firmware or hardware bugs in generic computers or evil mail men delivering laptops, but it does mean these bugs and hazards are far less likely to result in the loss of Bitcoin.
+This does not mean there can never be firmware or hardware bugs in generic computers or evil mail men delivering laptops, but it does mean these bugs and hazards are far less likely to result in the loss of Bitcoin. We cannot be absolutely certain (without expensive specialized equipment and expert knowledge) that computer chip foundries haven't backdoored every computer, but generic hardware is the most reasonable solution we have.
 
 The metadata collection in the vendor distribution of speciality hardware is also a privacy & security risk. If your email or name and address end up in a database leak associated with speciality Bitcoin hardware, you make yourself a desirable target. 
 
@@ -51,7 +51,7 @@ Beyond this we believe that from a risk analysis perspective, considering the li
 
 A: All of the backups created with yeti-2.0 are written to Millenniata M-discs, which are carbon coated, resistant to oxidation, and heat resistant. These discs are specially designed for long term, archival data storage. Under the proper storage conditions the manufacturer claims they will last up to 1,000 years. Verbatim brand Ultralife Gold Archival grade DVDs 4.7GB are also a good option, Verbatim claims these discs will last up to 100 years under proper storage conditions. 
 
-You should still check your backups periodically and redo them probably at least once every 10 years or so to be safe, this would be a good strategy with any key management stack. If the storage conditions for some of your backups are less ideal (heat or direct sunlight or moisture) you should check those backups more frequently.
+You should still check your backups periodically and refresh the backups at least once every 7-10 years to be safe, this would be a good strategy with any key management stack. If the storage conditions for some of your backups are less ideal (heat or direct sunlight or moisture) you should check those backups more frequently.
 
 ## Q: If you don't write down seed words, how can you ensure key backups are safe?
 
@@ -138,6 +138,12 @@ After you complete your test run, simply delete your "multisig_watch_wallet" fro
 A: This is not a problem with our setup. You can easily follow steps A1-A4 to set up a new node. You will find that your watch only wallet descriptor is backed up on each of the 7 M-discs.
 
 To load this watch only wallet descriptor back into your node, boot into your offline machine like you normally would, insert one of your key backup M-discs and copy the "multisig_watch_wallet" onto your transer USB, then transfer this wallet onto your node and load it into Bitcoin Core as explained in step B5. 
+
+## Q: What would happen to my Bitcoin if this guide dissappears tomorrow?
+
+A: Nothing would happen to your Bitcoin. The advantage of Yeti-2.0 is that you do not need this guide to spend or receive with the wallet. The only things you absolutely need to spend your Bitcoin is the official Bitcoin reference client software, Bitcoin Core, and an Optical Media drive capable of reading DVDs. 
+
+It's still a good idea to keep a copy of the ReadMe on each key backup disc for reference, but this guide is not a single point of failure. A reasonably competent person could spend a few hours reading the Bitcoin Core API documentation and figure out how to send and receive Bitcoin from the multisig wallet configured with this guide all on their own.
 
 ## Q: Can I use Tor for this? Can I use TAILS for the offline signer OS?
 
