@@ -29,6 +29,14 @@ A: The answer to this question is largely the same as above. We do not support h
 
 The fewer trusted 3rd parties you put between yourself and your Bitcoin, the better.
 
+## Q: Don't generic laptops also have some supply chain risk?
+
+A: Yes, they do. The more appropriate question is what are the range of options available to us and how do they compare? All else being equal, speciality hardware designed and sold for use with Bitcoin is significantly easier and cheaper for attackers to target across the supply chain than generic hardware sold for general purpose use.  
+
+This does not mean there can never be firmware or hardware bugs in generic computers or evil mail men delivering laptops, but it does mean these bugs and hazards are far less likely to result in the loss of Bitcoin.
+
+The metadata collection in the vendor distribution of speciality hardware is also a privacy & security risk. If your email or name and address end up in a database leak associated with speciality Bitcoin hardware, you make yourself a desirable target. 
+
 ## Q: Why don't you have users write down seed phrases?
 
 A: You are likely thinking of human readable 12 or 24 word seed phrases (AKA BIP 39 seed phrases). Many Bitcoin wallets use these and instruct people to write down the words on paper or even steel. 
@@ -37,7 +45,7 @@ We do not use these seed phrases because Bitcoin Core does not support them.
 
 Bitcoin native multisig on Bitcoin Core makes use of Bitcoin script embedded in the wallet descriptors and WIF keys. The logic embedded in wallet descriptors for a multsig vault is insperable from the keys and not compatible with something like the non standard BIP 39 seed phrase stamped into steel.
 
-Beyond this we believe that from a risk analysis perspective, considering the lindy and network effects of systems, CD/DVD form factor (on the proper medium which for us is Millenniata M-disc) and wallet backups in the standardized Bitcoin Core WIF & wallet descriptor format is far less likely to become deprecated over the coming decades than something like BIP 39 seeds etched into steel.
+Beyond this we believe that from a risk analysis perspective, considering the lindy and network effects of systems, the CD/DVD form factor (on the proper medium which for us is Millenniata M-disc) and wallet backups in the standardized Bitcoin Core WIF & wallet descriptor format is far less likely to become deprecated over the coming decades than something like human readable seed words etched into steel.
 
 ## Q: Why M-discs specifically?
 
