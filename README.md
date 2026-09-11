@@ -4,7 +4,7 @@
 
 The latest version of this guide lives at https://github.com/bowlarbear/yeti-2.0
 
-Guide Version: 1.23
+Guide Version: 1.24
 
 This guide was created using Bitcoin Core's [official multisig-tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/multisig-tutorial.md) and [offline signing tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/offline-signing-tutorial.md) as a reference. 
 
@@ -412,6 +412,8 @@ Verify the contents of the output, make sure that the `destination_address` and 
 
 If the transaction does not match what you expect STOP and reevaluate.
 
+Note: Change address verification on the \*offline computer\* is not necessary for test transactions, but when moving larger amounts you should also [verify the change address](verify_change_address.md) before signing.
+
 ### [\*offline computer\*] Load the Keys
 Choose 3 of the M-discs, insert them one at a time into the \*offline computer\*'s USB connected disc drive, and copy the key_# directory into `~/.bitcoin/wallets`.
 
@@ -535,16 +537,19 @@ Next time you want to spend Bitcoin from the multisig:
 3. [\*offline computer\*] verify the psbt contents (step C5)
 4. [\*offline computer\*] collect any 3 of the key discs, insert them 1 at a time and drag the key folders into the `~/.bitcoin/wallets` folder (step C5)
 5. [\*offline computer\*] load the wallets from the terminal (step C5)
-6. [\*offline computer\*] sign the PSBT (step C5)
-7. [\*offline computer\*] drag the signed PSBT from the desktop onto the transfer USB, remove the transfer USB and insert it into the online computer (step C5)
-8. [online computer] drag the signed PSBT from the transfer USB onto the desktop (step C5)
-9. [online computer] verify the psbt contents (step C5)
-10. [online computer] broadcast the signed PSBT (step C6)
+6. [\*offline computer\*] verify the PSBT contents (step C5)
+7. [\*offline computer\*] sign the PSBT (step C5)
+8. [\*offline computer\*] drag the signed PSBT from the desktop onto the transfer USB, remove the transfer USB and insert it into the online computer (step C5)
+9. [online computer] drag the signed PSBT from the transfer USB onto the desktop (step C5)
+10. [online computer] verify the psbt contents (step C5)
+11. [online computer] broadcast the signed PSBT (step C6)
 
 
 For security you should always turn off the \*offline computer\* after you finish signing and exporting a PSBT.
 
 Remember: These two laptops should be dedicated for use with Bitcoin Core ONLY. DO NOT use these two dedicated laptops for any other purpose or software.
+
+Remember: You should check your key backups periodically and refresh the backups once every 7-10 years. This would mean copying the contents of a backup disc onto a fresh M-disc or archival grade DVD, then adding it to the envelope to be stored beside the original. If at any point one of your backups becomes lost or unusable, best practice would be to move all of your funds into a fresh multisig vault.
 
 ## Updating Bitcoin Core on the Full Node (online Computer)
 
