@@ -63,11 +63,13 @@ A much better way to add redundancy rather than hand writing wallet descriptors 
 
 ## Q: Why can't I provide my own entropy with dice rolls or coin flips?
 
-A: Because you don't need to do this, Linux + Bitcoin Core are much better at generating secure random entropy than humans. If you do not trust the software stack to do it properly, then you should also not trust the software stack to properly use the entropy you provide it. 
+A: You can. Well-designed free and open source software like Linux, Bitcoin Core, OpenSSH, OpenSSL, GPG/PGP etc. use OS level entropy from several independent sources including the Operating System CSPRNG, Hardware RNG from the CPU, dynamic environment data and user activity. This is the sotware industry standard for creating secure private keys.
 
-Well-designed free and open source software like Linux, Bitcoin Core, OpenSSH, OpenSSL, GPG/PGP etc. use OS level entropy from several independent sources including the Operating System CSPRNG, Hardware RNG from the CPU, and dynamic environment data and user activity. This is the sotware industry standard for creating secure private keys.
+If wish to add your own entropy to this entropy pool, say the results of 100 dice rolls, you can simply type the result of each dice roll into your keyboard before using Bitcoin Core to generate your keys. This activity is captured by the operating system and added to your entropy pool.
 
-If you feel that you cannot trust these things then you should know you also cannot trust this guide, the website it is on, or any software you download via the internet. Web pages, signed software binaries like Bitcoin core, GitHub commits are all examples of things that are signed with computer generated private keys. 
+There is no need to do this, Linux + Bitcoin Core are better at generating secure random entropy than humans, but you cannot hurt your entropy pool by adding to it in this way. 
+
+If you feel that you cannot trust these things then you should know you also cannot trust this guide, the website it is on, or any software you download via the internet. Web pages, signed software binaries like Bitcoin core, and GitHub commits are all examples of things that are signed with computer generated private keys. 
 
 ## Q: Why is the vault a 3 of 7? Why not a 2 of 5 or an M of N?
 
