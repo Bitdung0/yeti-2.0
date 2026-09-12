@@ -83,7 +83,7 @@ If you query both addresses in both outputs and neither of them return `ismine: 
 
 ## [offline computer] Unload the watch wallet after you are finished verifying
 
-After you finish decoding and verifying your PSBT, on the offline computer, you should first unload the watch only wallet prior to signing the PSBT. This will prevent any potential errors from occuring with the signing script.
+After you finish decoding and verifying your PSBT, on the offline computer, you should first unload the `multisig_watch_wallet` prior to signing the PSBT. This will prevent any potential errors from occuring with the signing script.
 
 ```
 ~/bitcoin-31.1/bin/bitcoin-cli unloadwallet multisig_watch_wallet
