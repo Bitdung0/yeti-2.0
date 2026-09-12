@@ -40,11 +40,11 @@ Or tdecode the signed PSBT contents with this command on the online computer:
 
 In order to verify the contents of our PSBT there are two things we must check:
 
-The `destination_address` and `amount` that you provided when you created the transaction.
+1. The `destination_address` and `amount` that you provided when you created the transaction.
 
-The `change_address` and that it belongs to your wallet (There will not be a change address if you are moving all of the funds out of the wallet).
+2. The `change_address` and that it belongs to your wallet (There will not be a change ouput/address if you are moving all of the funds out of the wallet).
 
-To verify these two pieces of information we need to look for the `vout` (vector of outputs) section of the JSON`, it will look something like this:
+To verify these two pieces of information we need to look for the `vout` (vector of outputs) section of the JSON, it will look something like this:
 
 ![tx.vout array of a decoded psbt](./images/decoded_psbt.png)
 
