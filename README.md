@@ -4,7 +4,7 @@
 
 The latest version of this guide lives at https://github.com/bowlarbear/yeti-2.0
 
-Guide Version: 1.24
+Guide Version: 1.25
 
 This guide was created using Bitcoin Core's [official multisig-tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/multisig-tutorial.md) and [offline signing tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/offline-signing-tutorial.md) as a reference. 
 
@@ -402,17 +402,9 @@ Insert the transfer USB (no tape) into the \*offline computer\*. Copy or drag an
 
 ### [\*offline computer\*] Verify the PSBT
 
-Open a terminal and run this command.
+[Verify the PSBT contents](verify_psbt.md).
 
-```
-~/bitcoin-31.1/bin/bitcoin-cli decodepsbt "$(cat ~/Desktop/unsigned.psbt)"
-```
-
-Verify the contents of the output, make sure that the `destination_address` and `amount` within `tx.vout` matches what you expect.
-
-If the transaction does not match what you expect STOP and reevaluate.
-
-Note: Change address verification on the \*offline computer\* is not necessary for test transactions, but when moving larger amounts you should also [verify the change address](verify_change_address.md) before signing.
+Note: Verifying the PSBT is not necessary for test transactions, but when moving larger amounts you should always verify the contents before and after signing. It is worth practicing the process on atleast 1 test transaction. 
 
 ### [\*offline computer\*] Load the Keys
 Choose 3 of the M-discs, insert them one at a time into the \*offline computer\*'s USB connected disc drive, and copy the key_# directory into `~/.bitcoin/wallets`.
@@ -464,16 +456,9 @@ Insert the transfer USB into the online computer. Copy signed.psbt from the tran
 
 ### [online computer] Verify the PSBT
 
-Open a terminal and run this command.
+[Verify the PSBT contents](verify_psbt.md).
 
-```
-~/bitcoin-31.1/bin/bitcoin-cli decodepsbt "$(cat ~/Desktop/signed.psbt)"
-```
-
-Verify the contents of the output, make sure that the `destination_address` and `amount` within `tx.vout` matches what you expect.
-
-If the transaction does not match what you expect STOP and reevaluate.
-
+Note: Verifying the PSBT is not necessary for test transactions, but when moving larger amounts you should always verify the contents before and after signing. It is worth practicing the process on atleast 1 test transaction. 
 ## C6. [online computer] Broadcast Transaction
 
 ```
@@ -534,15 +519,14 @@ From here the process for spending from the multisig is the same as above.
 Next time you want to spend Bitcoin from the multisig:
 1. [online computer] Create the unsigned PSBT on the online computer, drag the unsigned PSBT into the transfer USB (step C4)
 2. [\*offline computer\*] insert transfer USB into the \*offline computer\*, drag the unsigned PSBT onto the desktop (step C4)
-3. [\*offline computer\*] verify the psbt contents (step C5)
+3. [\*offline computer\*] [verify the PSBT contents](verify_psbt.md) (step C5)
 4. [\*offline computer\*] collect any 3 of the key discs, insert them 1 at a time and drag the key folders into the `~/.bitcoin/wallets` folder (step C5)
-5. [\*offline computer\*] load the wallets from the terminal (step C5)
-6. [\*offline computer\*] verify the PSBT contents (step C5)
-7. [\*offline computer\*] sign the PSBT (step C5)
-8. [\*offline computer\*] drag the signed PSBT from the desktop onto the transfer USB, remove the transfer USB and insert it into the online computer (step C5)
-9. [online computer] drag the signed PSBT from the transfer USB onto the desktop (step C5)
-10. [online computer] verify the psbt contents (step C5)
-11. [online computer] broadcast the signed PSBT (step C6)
+5. [\*offline computer\*] load the keys from the terminal (step C5)
+6. [\*offline computer\*] sign the PSBT (step C5)
+7. [\*offline computer\*] drag the signed PSBT from the desktop onto the transfer USB, remove the transfer USB and insert it into the online computer (step C5)
+8. [online computer] drag the signed PSBT from the transfer USB onto the desktop (step C5)
+9. [online computer] [verify the PSBT contents](verify_psbt.md) (step C5)
+10. [online computer] broadcast the signed PSBT (step C6)
 
 
 For security you should always turn off the \*offline computer\* after you finish signing and exporting a PSBT.
