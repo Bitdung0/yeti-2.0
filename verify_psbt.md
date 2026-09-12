@@ -48,11 +48,11 @@ To verify these two pieces of information we need to look for the `vout` (vector
 
 ![tx.vout array of a decoded psbt](./images/decoded_psbt.png)
 
-As you can see in the photo this PSBT contains two different outputs, one is the destination output and one is the change output (the left over BTC that gets sent back into our own wallet).
+As you can see in the photo this PSBT contains two different outputs (`n:0` and `n:1`), one is the destination output and one is the change output (the left over BTC that gets sent back into our own wallet).
 
-Within in output, you are looking for the `address` and the `value` field. Assuming you can remember how much BTC you are sending and to what address, you can compare these two outputs to determine which is the destination output and which is the change output. 
+Within an output, you are looking for the `address` and the `value` field. Assuming you can remember how much BTC you are sending and to what address, you can compare these two outputs to determine which is the destination output and which is the change output. 
 
-If the `address` and `value` does not match what you expect in the destination output, **STOP! DO NOT PROCEED! Revaluate the above steps. An attack may be trying to steal your funds.**
+If the `address` and `value` does not match what you expect for the destination output, **STOP! DO NOT PROCEED! Revaluate the above steps. An attack may be trying to steal your funds.**
 
 Once you have identified the change output, you should then run the following command in the terminal (replacing `$change_address` with the actual change address obtained from the output) to verify that it belongs to your wallet:
 
@@ -64,7 +64,7 @@ In the result of this command you need to look for `"ismine": true`, this confir
 
 ![example of ismine: true](./images/ismine_true.png)
 
-If `"ismine": false` appears on what you expect to be your change output **STOP! DO NOT PROCEED! Revaluate the above steps. An attacker may be trying to steal your funds.**
+If `"ismine": false` appears on your change address **STOP! DO NOT PROCEED! Revaluate the above steps. An attacker may be trying to steal your funds.**
 
 There is no need to run getaddressinfo on the `destination_address`, however, for reference, if you were to run the address query on the `destination_address`, rather than the `change_address`, like so:
 
@@ -78,7 +78,7 @@ This is an example of what you would expect to see:
 
 Notice the `ismine: false`.
 
-If you query both addresses in both outputs and neither of them return `ismine: true`. **STOP! NOT PROCEED! Revaluate the above steps. An attacker may be trying to steal your funds.**
+If you query both addresses in both of the outputs and neither of them return `ismine: true`. **STOP! NOT PROCEED! Revaluate the above steps. An attacker may be trying to steal your funds.**
 
 
 ## [offline computer] Unload the watch wallet after you are finished verifying
