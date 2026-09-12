@@ -8,8 +8,8 @@ Note: If you are moving the entire contents of the wallet with a single transact
 
 
 ## Decoding a PSBT
-must
-To verify the output address of a PSBT on your offline computer, you must have the psbt file on the desktop of the computer. You must have the `multisig_watch_wallet` in the `~/.bitcoin/wallets` folder (Remember: A copy of `multisig_watch_wallet` can be found on any of your backup discs. Never insert these discs into your online computer).
+
+To verify the outputs of a PSBT, you must have the psbt file on the desktop of the computer. You must have the `multisig_watch_wallet` in the `~/.bitcoin/wallets` folder (Remember: A copy of `multisig_watch_wallet` can be found on any of your backup discs. **Never insert these discs into your online computer**).
 
 Once you have the `multisig_watch_wallet` imported to the proper location, ensure Bitcoin Core has started by running this command in the terminal:
 
@@ -17,7 +17,7 @@ Once you have the `multisig_watch_wallet` imported to the proper location, ensur
 ~/bitcoin-31.1/bin/bitcoind -daemon
 ```
 
-Then ensure you have the wallet loaded by running this command:
+Then ensure you have the `multisig_watch_wallet` loaded by running this command:
 
 ```
 ~/bitcoin-31.1/bin/bitcoin-cli loadwallet "multisig_watch_wallet"
@@ -29,7 +29,7 @@ Now you can decode the unsigned PSBT contents with this command on the offline c
 ~/bitcoin-31.1/bin/bitcoin-cli decodepsbt "$(cat ~/Desktop/unsigned.psbt)"
 ```
 
-Or this command to decode the signed PSBT contents on the online computer:
+Or tdecode the signed PSBT contents with this command on the online computer:
 
 ```
 ~/bitcoin-31.1/bin/bitcoin-cli decodepsbt "$(cat ~/Desktop/signed.psbt)"
