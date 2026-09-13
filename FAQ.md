@@ -153,6 +153,18 @@ A: You certainly could do these things. For the sake of keeping the main guide t
 
 These would be potential subguide ideas if you are interested in contributing. Obviously any reccomendations to users need to be thorough & properly end to end tested within the context of the main guide, see the [contribution guide](contributions.md) for more information.
 
+## Q: Why not keep the offline signer permanently offline? 
+
+A: You can do this, you could keep a copy of the Bitcoin software on a USB stick and import it to your offline computer each time you boot it so as to avoid temporarily connecting to a network to redownload Bitcoin Core.
+
+There are several reasons we opted not to do this. The first reason is because its good practice to always use the latest version of the sotware. If a user has an older version of the software stored on a USB stick, they may not update the software before using their signer. 
+
+The second reason is related to the first, in that the scripts provided in this guide assume the user is running the latest release of Bitcoin Core. If the user has Bitcoin-31.1 on their USB stick and the scripts in the guide are update to Bitcoin-31.2, suddenly those scripts will no longer work for the user, and it may be unclear why. 
+
+The third reason is because permissions conflicts can occur on linux when you import software like Bitcoin Core rather than downloading it directly, accounting for these potential permissions conflicts was deemed undesirable.
+
+We believe these tradeoffs are acceptable, but if you prefer to keep your offline machine always offline after initial keygen, this would not require much additional work to do, keep a copy of Bitcoin Core on a USB stick and import it to your offline machine, be prepared to troubleshoot any issues that might arise from doing so, they are not insurmountable. 
+
 ## Q: Can I use assumeutxo to speed up the IBD on the full node?
 
 A: Yes you can do this, however, if you follow the guide as written this will not actually help you. The reason for this is because even with assumeutxo you cannot actually use the loadwallet command until the full background validation completes, which is the equivalent to full IBD anyway. We create our multisig descriptor on the offline machine in order to avoid making the experience more cumbersome, this means you need a fully synced node in order to import that descriptor. 
