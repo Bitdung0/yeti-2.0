@@ -163,7 +163,7 @@ The second reason is related to the first, in that the scripts provided in this 
 
 The third reason is because permissions conflicts can occur on linux when you import software like Bitcoin Core rather than downloading it directly, accounting for these potential permissions conflicts was deemed undesirable.
 
-We believe these tradeoffs are acceptable, but if you prefer to keep your offline machine always offline after initial keygen, this would not require much additional work to do, keep a copy of Bitcoin Core on a USB stick and import it to your offline machine, be prepared to troubleshoot any issues that might arise from doing so, they are not insurmountable. 
+We believe these tradeoffs are acceptable, key material should never touch the device while it is network enabled. However, if you prefer to keep your offline signer always offline after initial keygen and backup, this would not require much additional work to do. Keep a copy of Bitcoin Core on a USB stick and import it to your offline machine, be prepared to troubleshoot any issues that might arise from doing so, these issues are not insurmountable, and complete process for doing so could be added as a subguide.
 
 ## Q: Can I use assumeutxo to speed up the IBD on the full node?
 
