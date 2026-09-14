@@ -41,7 +41,7 @@ The metadata collection in the vendor distribution of speciality hardware is als
 
 A: The design of this guide is failsafe. That means if you go through it all the way from start to finish everything will either work or it won't. If something doesn't work, or if you encounter an error, you will have to go back a few steps and try again. If you encounter the same error two or more times then you know you need to back up even further. 
 
-The good thing about this is that there are no errors or problems you will encounter that will result in lost funds. Occasional errors may rarely happen if you do not follow the instructions careully. But, at worst they may result in a bit of lost time, a few wasted backup discs, or a few dollars permanently stuck in a multisig vault. None of these things are desirable, but we believe they are preferrable to the alternative of losing a significant amount of funds to trusted 3rd parties or extra software that alleviate this minor user experience friction.
+The good thing about this is that there are no errors or problems you will encounter that will result in lost funds. Occasional errors may rarely happen if you do not follow the instructions careully. But, at worst they may result in a bit of lost time, a few wasted backup discs, or a small amount of bitcoin used for your test deposit getting stuck in the multisig vault. None of these things are desirable, but we believe they are preferrable to the alternative of losing a significant amount of funds to trusted 3rd parties or extra software that alleviate this minor user experience friction.
 
 
 ## Q: Why don't you have users write down seed phrases?
