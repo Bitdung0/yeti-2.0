@@ -23,13 +23,13 @@ Then ensure you have the `multisig_watch_wallet` loaded by running this command:
 ~/bitcoin-31.1/bin/bitcoin-cli loadwallet "multisig_watch_wallet"
 ```
 
-Now you can decode the unsigned PSBT contents with this command on the offline computer:
+Now you can decode the unsigned PSBT contents with this command on the \*offline computer\*:
 
 ```
 ~/bitcoin-31.1/bin/bitcoin-cli decodepsbt "$(cat ~/Desktop/unsigned.psbt)"
 ```
 
-Or tdecode the signed PSBT contents with this command on the online computer:
+Or decode the signed PSBT contents with this command on the online computer:
 
 ```
 ~/bitcoin-31.1/bin/bitcoin-cli decodepsbt "$(cat ~/Desktop/signed.psbt)"
@@ -42,7 +42,7 @@ In order to verify the contents of our PSBT there are two things we must check:
 
 1. The `destination_address` and `amount` that you provided when you created the transaction.
 
-2. The `change_address` and that it belongs to your wallet (There will not be a change ouput/address if you are moving all of the funds out of the wallet).
+2. The `change_address` and that it belongs to your wallet (There will not be a change output/address if you are moving all of the funds out of the wallet).
 
 To verify these two pieces of information we need to look for the `vout` (vector of outputs) section of the JSON, it will look something like this:
 
@@ -52,7 +52,7 @@ As you can see in the photo this PSBT contains two different outputs (`n:0` and 
 
 Within an output, you are looking for the `address` and the `value` field. Assuming you can remember how much BTC you are sending and to what address, you can compare these two outputs to determine which is the destination output and which is the change output. 
 
-If the `address` and `value` does not match what you expect for the destination output, **STOP! DO NOT PROCEED! Revaluate the above steps. An attack may be trying to steal your funds.**
+If the `address` and `value` do not match what you expect for the destination output, **STOP! DO NOT PROCEED! Re-evaluate the above steps. An attack may be trying to steal your funds.**
 
 Once you have identified the change output, you should then run the following command in the terminal (replacing `$change_address` with the actual change address obtained from the output) to verify that it belongs to your wallet:
 
@@ -64,9 +64,9 @@ In the result of this command you need to look for `"ismine": true`, this confir
 
 ![example of ismine: true](./images/ismine_true.png)
 
-If `"ismine": false` appears on your change address **STOP! DO NOT PROCEED! Revaluate the above steps. An attacker may be trying to steal your funds.**
+If `"ismine": false` appears on your change address **STOP! DO NOT PROCEED! Re-evaluate the above steps. An attacker may be trying to steal your funds.**
 
-There is no need to run getaddressinfo on the `destination_address`, however, for reference, if you were to run the address query on the `destination_address`, rather than the `change_address`, like so:
+There is no need to run `getaddressinfo` on the `destination_address`, however, for reference, if you were to run the address query on the `destination_address`, rather than the `change_address`, like so:
 
 ```
 ~/bitcoin-31.1/bin/bitcoin-cli -rpcwallet="multisig_watch_wallet" getaddressinfo "$destination_address"
@@ -78,12 +78,12 @@ This is an example of what you would expect to see:
 
 Notice the `ismine: false`.
 
-If you query both addresses in both of the outputs and neither of them return `ismine: true`. **STOP! NOT PROCEED! Revaluate the above steps. An attacker may be trying to steal your funds.**
+If you query both addresses in both of the outputs and neither of them return `ismine: true`. **STOP! DO NOT PROCEED! Re-evaluate the above steps. An attacker may be trying to steal your funds.**
 
 
-## [offline computer] Unload the watch wallet after you are finished verifying
+## [\*offline computer\*] Unload the watch wallet after you are finished verifying
 
-After you finish decoding and verifying your PSBT, on the offline computer, you should first unload the `multisig_watch_wallet` prior to signing the PSBT. This will prevent any potential errors from occuring with the signing script.
+After you finish decoding and verifying your PSBT, on the \*offline computer\*, you should first unload the `multisig_watch_wallet` prior to signing the PSBT. This will prevent any potential errors from occurring with the signing script.
 
 ```
 ~/bitcoin-31.1/bin/bitcoin-cli unloadwallet multisig_watch_wallet

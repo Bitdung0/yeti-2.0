@@ -1,4 +1,4 @@
-# How to Upgrade the storage drive in a laptop
+# How to Upgrade the Storage Drive in a Laptop
 
 Replacing the internal storage drive in a laptop computer is not difficult, even though it might first seem intimidating, it is a necessary process for making our full node computer more reliable.
 
@@ -6,17 +6,17 @@ The reason we choose to upgrade our online computer to a full archival node inst
 
 If you are intimidated by this process, the best thing to do is to look up a teardown guide for your specific model laptop. The steps here will be for a Thinkpad T440, which will only provide you a more generalized overview if your model laptop is different.
 
-If you would, for some reason, prefer not to do this, [see here](FAQ.md#q-can-i-use-a-pruned-node) for a brief pruning guide. 
+If you would, for some reason, prefer not to do this, [see here](pruning.md) for a brief pruning guide. 
 
 ## Removing the Cover
 
-You will need a small phillips head screwdriver.
+You will need a small Phillips-head screwdriver.
 
 First ensure the laptop is turned off and unplugged. Then, close the laptop and turn it over so that you are looking at the bottom of the device. Next, unlock and remove the battery from the device.
 
 ![Battery removal step](./images/Lenovo-ThinkPad-T440p-Disassembly-1.JPG)
 
-Next Remove the two screws in the top right and left corner on either side of the battery port.
+Next, Remove the two screws in the top right and left corner on either side of the battery port.
 
 ![Screw removal step](./images/Lenovo-ThinkPad-T440p-Disassembly-2.JPG)
 

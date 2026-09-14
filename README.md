@@ -1,4 +1,4 @@
-# How to Set up Secure, Airgapped Bitcoin Multisig with Bitcoin Core
+# How to Set up Secure, Air-gapped Bitcoin Multisig with Bitcoin Core
 
 ## Introduction
 
@@ -10,7 +10,7 @@ This guide was created using Bitcoin Core's [official multisig-tutorial](https:/
 
 Users can verify the scripts found here by comparing them to the scripts provided in the official multisig tutorial.
 
-This guide aims to improve the usability of the official multisig guide, as well as provide setup instructions for a secure full archival node & 3 of 7 multisig vault, full wallet & key backups, and an easy to use airgapped signing device. This guide functions both as an educational tool and alternative to [YetiCold Level 3](https://github.com/jwweatherman/yeticold) for users who prefer to do things manually, verify every step of the process, and minimize dependencies.
+This guide aims to improve the usability of the official multisig guide, as well as provide setup instructions for a secure full archival node & 3-of-7 multisig vault, full wallet & key backups, and an easy to use air-gapped signing device. This guide functions both as an educational tool and alternative to [YetiCold Level 3](https://github.com/jwweatherman/yeticold) for users who prefer to do things manually, verify every step of the process, and minimize dependencies.
 
 See the [FAQ](FAQ.md) for answers to common questions about the design.
 
@@ -18,26 +18,26 @@ This multisig vault is only appropriate for storing between $10k-$5M in Bitcoin.
 
 ## You will need:
 
-- 2 Dedicated Laptops (8GB RAM minimum) (try refurbished thinkpads) (Chromebooks will not work)
+- 2 Dedicated Laptops (8GB RAM minimum) (try refurbished ThinkPads) (Chromebooks will not work)
 
-- 2 Fresh USB sticks (16GB minimum) (try kingston datatravelers 64GB)
+- 2 Fresh USB sticks (16GB minimum) (try Kingston DataTravelers 64GB)
 
-- 7 Millenniata brand M-disc DVDs 4.7GB or 7 Verbatim brand Ultralife Gold Archival grade DVDs 4.7GB
+- 7 Millenniata brand M-Disc DVDs 4.7GB or 7 Verbatim brand Ultralife Gold Archival grade DVDs 4.7GB
 
-- 1 USB powered disc drive capable of writing M-Disc DVDs (try ASUS zendrive)
+- 1 USB powered disc drive capable of writing M-Disc DVDs (try ASUS ZenDrive)
 
 - 1 2TB SATA SSD 2.5 inch internal Hard Drive (will last you for approximately 10 years of full archival node storage as of Aug 2026 before requiring an upgrade)
 
-estimated total cost (using amazon for reference as of 11 Aug 2026):
+estimated total cost (using Amazon for reference as of 11 Aug 2026):
 ~$750
 
-# A. Initial Set Up
+# A. Initial Setup
 
 These two laptops should be dedicated for use with Bitcoin Core ONLY. DO NOT use these two dedicated laptops for any other purpose or software than what is described in this guide. 
 
 Pick one laptop to be the online computer, this will be the Bitcoin node. You will need to replace the internal SATA storage drive on this laptop with your 2TB SATA SSD. This process is not difficult, however it will usually require removing the screws on the bottom cover of the laptop. [The exact process will vary depending on the exact model of laptop you purchased](upgrade_node_storage.md).
 
-There should only be one internal storage drive inside of your online laptop. If the online laptop also contains an NVME drive, you should remove it while you are replacing the SATA drive. You may use a 2TB NVME drive if your laptop supports the form factor (these are more expensive than SATA drives), but in that case ensure you also remove the SATA drive if one is present.
+There should only be one internal storage drive inside of your online laptop. If the online laptop also contains an NVMe drive, you should remove it while you are replacing the SATA drive. You may use a 2TB NVMe drive if your laptop supports the form factor (these are more expensive than SATA drives), but in that case ensure you also remove the SATA drive if one is present.
 
 ## Step A1. [online computer] Install Ubuntu
 
@@ -49,22 +49,22 @@ You will most likely need the Intel or AMD 64-bit architecture, download the lat
 
 You should [verify the Ubuntu download](verify_ubuntu.md) before creating the installer.
 
-Grab one of the fresh USB sticks and mark it with a sticker or a piece of tape. This will be the Linux USB, and it needs to be flashed with the ubuntu installer.
+Grab one of the fresh USB sticks and mark it with a sticker or a piece of tape. This will be the Linux USB, and it needs to be flashed with the Ubuntu installer.
 
 If you are on Windows you can download an app called [Rufus](https://rufus.ie) and use that to create the live installer. MacOS users can download an app called [balenaEtcher](https://github.com/balena-io/etcher/releases). 
 
-If you know how to use dd and you already have access to a terminal this is best way because it does not rely on a third party dependency. Be careful you flash the correct drive if you use dd, it's colloquially called "disk destroyer" for a reason.
+If you know how to use dd and you already have access to a terminal this is the best way because it does not rely on a third party dependency. Be careful that you flash the correct drive if you use dd, it's colloquially called "disk destroyer" for a reason.
 
 Once you have the Linux USB ready, the next step will be to install Linux on the online computer. Doing this requires turning off the computer, inserting the Linux USB (USB with tape) into the online computer and turning the power back on. If this doesn't work on the first try, you might need to change the boot order within the BIOS.
 
 After the Ubuntu splash screen select `Install Ubuntu`.
 
-During installation, simply proceed with all of the default settings, when you reach "Disk Setup" screen select "Erase disk and install Ubuntu". When you reach the "Encryption and File System" screen select "Encrypt with a passphrase". Choose a password for the node, remember to write down this password (if you lose password you will have to reinstall ubuntu and resync the node, but the bitcoin wallet will not be affected).
+During installation, simply proceed with all of the default settings, when you reach the "Disk Setup" screen select "Erase disk and install Ubuntu". When you reach the "Encryption and File System" screen select "Encrypt with a passphrase". Choose a password for the node, remember to write down this password (if you lose this password you will have to reinstall Ubuntu and resync the node, but the bitcoin wallet will not be affected).
 
 
 ## Step A2. [online computer] Install Security Updates
 
-Once you've finished installing Linux, you need to install security updates. First connect to WIFI or LAN.
+Once you've finished installing Linux, you need to install security updates. First connect to Wi-Fi or LAN.
 
 Open a terminal with `Ctrl + Alt + T`. Then type or copy and paste the following commands into the terminal.
 
@@ -74,13 +74,13 @@ Note: To copy and paste within a terminal on Linux you must use `Ctrl + Shift + 
 sudo apt update
 ```
 
-Press enter, then press Y if prompted and press enter again, wait for it to finish
+Press enter, then press Y if prompted and press enter again, wait for it to finish.
 
 ```
 sudo apt -y full-upgrade
 ```
 
-press enter, then press Y if prompted and press enter again, wait for it to finish
+press enter, then press Y if prompted and press enter again, wait for it to finish.
 
 
 ## Step A3. [online computer] Install the Latest Version of Bitcoin Core
@@ -99,7 +99,7 @@ wget -P ~/Downloads https://bitcoincore.org/bin/bitcoin-core-31.1/SHA256SUMS.asc
 
 ### [online computer] Verify Bitcoin Core
 
-After you've finished downloading Bitcoin core verify the hash by running this command in the terminal.
+After you've finished downloading Bitcoin Core verify the hash by running this command in the terminal.
 
 ```
 cd ~/Downloads && sha256sum --ignore-missing --check SHA256SUMS
@@ -144,7 +144,7 @@ Press enter, you should see a message that says "Bitcoin Core Starting"
 
 This computer will now begin syncing the Bitcoin blockchain. This can take a while (multiple days). You will need this process to completely finish before you can perform any test transactions, but for now, continue with this guide.
 
-Note: It is important to always properly shut down bitcoin core before turning off this computer, this prevents wasted time spent resyncing in the future. To do this run this command:
+Note: It is important to always properly shut down Bitcoin Core before turning off this computer, this prevents wasted time spent resyncing in the future. To do this run this command:
 
 ```
 ~/bitcoin-31.1/bin/bitcoin-cli stop
@@ -156,9 +156,9 @@ You should see a message that says "Bitcoin Core Stopping"
 
 Now switch to the second computer, this will be the \*offline computer\*. Place a piece of tape on this computer to mark it.
 
-Insert the Linux USB (the one with tape) and turn the computer on. Remember if are not greeted by the Ubuntu installer, you may need to adjust the boot order in the BIOS. From this point forward the Linux USB will remain plugged into the \*offline computer\* (remember both the offline computer and the Linux USB are marked with tape).
+Insert the Linux USB (the one with tape) and turn the computer on. Remember if you are not greeted by the Ubuntu installer, you may need to adjust the boot order in the BIOS. From this point forward the Linux USB will remain plugged into the \*offline computer\* (remember both the \*offline computer\* and the Linux USB are marked with tape).
 
-Within the Ubuntu installer wizard, choose the option to connect to either WIFI or LAN, this will be temporary.
+Within the Ubuntu installer wizard, choose the option to connect to either Wi-Fi or LAN, this will be temporary.
 
 At the end of the Ubuntu installer wizard select `Try Ubuntu`.
 
@@ -191,9 +191,9 @@ sudo apt update
 sudo apt -y install brasero
 ```
 
-Press enter and wait for it to finish. You may see a dkpg error in the terminal after installing brasero but this can safely be ignored.
+Press enter and wait for it to finish. You may see a dpkg error in the terminal after installing brasero but this can safely be ignored.
 
-Note: The authenticity of the Brasero software is automatically checked by Ubuntu's apt package manager. Brasero is needed so we can make backups of our keys and burn them to M-discs.
+Note: The authenticity of the Brasero software is automatically checked by Ubuntu's apt package manager. Brasero is needed so we can make backups of our keys and burn them to M-Discs.
 
 ## Step A7: [\*offline computer\*] Disable Networking 
 
@@ -204,7 +204,7 @@ nmcli networking off
 rfkill block bluetooth
 ```
 
-This command will disable all networking functionality (WIFI, LAN, and Bluetooth)
+This command will disable all networking functionality (Wi-Fi, LAN, and Bluetooth)
 
 ### [\*offline computer\*] Disable any swap space
 
@@ -238,7 +238,7 @@ do
 done
 ```
 
-Press Enter
+Press Enter.
 
 
 ## Step B3: [\*offline computer\*] Capture Extended Public Keys (XPUBs) 
@@ -253,7 +253,7 @@ done
 
 ```
 
-Press Enter
+Press Enter.
 
 ## Step B4: [\*offline computer\*] Create the Multisig Wallet Descriptor
 
@@ -273,9 +273,9 @@ multisig_desc="[{\"desc\": \"${desc}#${checksum}\", \"active\": true, \"timestam
 ~/bitcoin-31.1/bin/bitcoin-cli -rpcwallet="multisig_watch_wallet" getwalletinfo
 ```
 
-Press Enter
+Press Enter.
 
-## Step B5: [\*offline computer\*] Export the Watch Only Wallet Descriptor
+## Step B5: [\*offline computer\*] Export the Watch-Only Wallet Descriptor
 
 Grab the second USB stick (with no tape), this will be the transfer USB. Insert it into the \*offline computer\*. Copy `~/.bitcoin/wallets/multisig_watch_wallet` onto the transfer USB and then remove the transfer USB from the \*offline computer\*.
 
@@ -294,7 +294,7 @@ You can use either bitcoin-cli or bitcoin-qt (Bitcoin Core's graphical user inte
 ## Step B6: [\*offline computer\*] Backup Keys
 Now back up each of the 7 keys and the wallet descriptor.
 
-Use brasero to create 7 mdisc backups. These files can be found in the `~/.bitcoin/wallets` folder. Take an M disc and write the number 1 on it with a permenent marker, insert disc 1 into the USB connected disc drive. Then use brasero create an ISO of key_1 & the multisig_watch_wallet from `~/.bitcoin/wallets` along with README.md which is a copy of this guide. Burn this ISO to disc 1. Repeat for all 7 keys.
+Use brasero to create 7 M-Disc backups. These files can be found in the `~/.bitcoin/wallets` folder. Take an M-Disc and write the number 1 on it with a permanent marker, insert disc 1 into the USB connected disc drive. Then use Brasero create an ISO of key_1 & the multisig_watch_wallet from `~/.bitcoin/wallets` along with README.md which is a copy of this guide. Burn this ISO to disc 1. Repeat for all 7 keys.
 
 1 = key_1 & multisig_watch_wallet
 
@@ -323,7 +323,7 @@ You can query the status of your node sync by running the following command in t
 
 Look for the line that says `verificationprogress`, this will be at `1` and `initialblockdownload` will be `false` when your node is finished syncing.
 
-# C.  Test Wallet Backups
+# C. Test Wallet Backups
 
 ## C1. [\*offline computer\*] Delete Wallets Folder
 
@@ -348,7 +348,7 @@ start Bitcoin Core again
 
 Note: You can generate addresses on either your online machine or your offline machine, provided that you have the "multisig_watch_wallet" in the `~/.bitcoin/wallets` folder.
 
-Note: In order to check balances and generate new addresses the "multisig_watch_wallet" wallet must loaded with either Bitcoin-QT, which is Bitcoin Core's Graphical User Interface (GUI) or with the Bitcoin-cli (see step B5). To use the GUI, simply double click on "Bitcoin-QT" inside of `~/bitcoin-31.1/bin` in the file explorer, then load "multisig_watch_wallet" and generate a receive address for a QR code.
+Note: In order to check balances and generate new addresses the "multisig_watch_wallet" must be loaded with either Bitcoin-QT, which is Bitcoin Core's Graphical User Interface (GUI) or with the Bitcoin-cli (see step B5). To use the GUI, simply double click on "Bitcoin-QT" inside of `~/bitcoin-31.1/bin` in the file explorer, then load "multisig_watch_wallet" and generate a receive address for a QR code.
 
 To use the cli, load the wallet like in step B5. 
 
@@ -375,7 +375,7 @@ Note: You can only check the balance of your wallet from the online computer, wi
 
 ## C4. [online computer] Create a Transaction 
 
- Note: You can only create a transaction from the online computer with the wallet properly loaded as shown in step B5.
+Note: You can only create a transaction from the online computer with the wallet properly loaded as shown in step B5.
 
 ### Important: Replace $amount and $destination_address with the right values, make sure these are correct before running
 
@@ -404,10 +404,10 @@ Insert the transfer USB (no tape) into the \*offline computer\*. Copy or drag an
 
 [Verify the PSBT contents](verify_psbt.md).
 
-Note: Verifying the PSBT is not necessary for test transactions, but when moving larger amounts you should always verify the contents before and after signing. It is worth practicing the process on atleast 1 test transaction. 
+Note: Verifying the PSBT is not necessary for test transactions, but when moving larger amounts you should always verify the contents before and after signing. It is worth practicing the process on at least1 test transaction. 
 
 ### [\*offline computer\*] Load the Keys
-Choose 3 of the M-discs, insert them one at a time into the \*offline computer\*'s USB connected disc drive, and copy the key_# directory into `~/.bitcoin/wallets`.
+Choose 3 of the M-Discs, insert them one at a time into the \*offline computer\*'s USB connected disc drive, and copy the key_# directory into `~/.bitcoin/wallets`.
 
 After copying a key run the following command, replace `key_#` with the name of the key you copied into `~/.bitcoin/wallets`
 
@@ -458,7 +458,7 @@ Insert the transfer USB into the online computer. Copy signed.psbt from the tran
 
 [Verify the PSBT contents](verify_psbt.md).
 
-Note: Verifying the PSBT is not necessary for test transactions, but when moving larger amounts you should always verify the contents before and after signing. It is worth practicing the process on atleast 1 test transaction. 
+Note: Verifying the PSBT is not necessary for test transactions, but when moving larger amounts you should always verify the contents before and after signing. It is worth practicing the process on at least 1 test transaction. 
 ## C6. [online computer] Broadcast Transaction
 
 ```
@@ -476,15 +476,15 @@ Repeat this process (steps C1 through C6) until you've tested all 7 of the key b
 
 2nd transaction: key4, key5, key6
 
-3rd transaction key7, + any 2 other keys
+3rd transaction: key7, + any 2 other keys
 
-Warning: If any of the test transactions fail during this process, the best thing to do is to go back to step C4 and try again. If it still doesn't work then something is wrong and you should stop. Delete all psbts on both computer's `~/Desktop`. Delete the multisig_watch_wallet on the transfer usb. Delete both of the `.bitcoin/wallets` folders on both computers, and start over at step A5 with fresh m-dsics.
+Warning: If any of the test transactions fail during this process, the best thing to do is to go back to step C4 and try again. If it still doesn't work then something is wrong and you should stop. Delete all PSBTs on both computers' `~/Desktop`. Delete the multisig_watch_wallet on the transfer usb. Delete both of the `.bitcoin/wallets` folders on both computers, and start over at step A5 with fresh M-Discs.
 
 Only after you have successfully completed all 3 test transactions, testing all 7 keys as described above, will you have confirmed that the wallet is working properly.
 
 ## C7. Geographically Distribute Backups
 
-The next step is to place each of the 7 back up discs into 7 different envelopes. Mark them with something non-descript like "Do not open. Property of <your_name>. Pass this on to to next of kin." What you write on these envelopes will ultimately be up to you, but it should be relatively non-descript. 
+The next step is to place each of the 7 backup discs into 7 different envelopes. Mark them with something non-descript like "Do not open. Property of <your_name>. Pass this on to the next of kin." What you write on these envelopes will ultimately be up to you, but it should be relatively non-descript. 
 
 The 7 envelopes must be geographically distributed to 7 different locations. 
 
@@ -493,9 +493,9 @@ You now have a secure, Bitcoin multisig vault that can only be accessed by gathe
 
 # D. How to use the Wallet Normally
 
-By this point you should already have a good understanding of how this works. The \*offline computer\* does not have any persistence. This is for your security, so no keys are ever written to the computers storage, they can never be recovered without the backup discs. Each time you wish to sign a psbt with the \*offline computer\* follow these steps carefully...
+By this point you should already have a good understanding of how this works. The \*offline computer\* does not have any persistence. This is for your security, so no keys are ever written to the computer's storage, they can never be recovered without the backup discs. Each time you wish to sign a PSBT with the \*offline computer\* follow these steps carefully...
 
-Insert Linux USB into the powered off, \*offline computer\*, turn the computer on, after the Ubuntu splash screen select `try ubuntu`
+Insert Linux USB into the powered off, \*offline computer\*, turn the computer on, after the Ubuntu splash screen select `Try Ubuntu`
 
 Temporarily connect to your home network, download and verify Bitcoin Core. Download this guide if needed (see steps A6 & A7). You do not need to reinstall Brasero.
 
@@ -533,16 +533,16 @@ For security you should always turn off the \*offline computer\* after you finis
 
 Remember: These two laptops should be dedicated for use with Bitcoin Core ONLY. DO NOT use these two dedicated laptops for any other purpose or software.
 
-Remember: You should check your key backups periodically and refresh the backups once every 7-10 years. This would mean copying the contents of a backup disc onto a fresh M-disc or archival grade DVD, then adding it to the envelope to be stored beside the original. If at any point one of your backups becomes lost or unusable, best practice would be to move all of your funds into a fresh multisig vault.
+Remember: You should check your key backups periodically and refresh the backups once every 7-10 years. This would mean copying the contents of a backup disc onto a fresh M-Disc or archival grade DVD, then adding it to the envelope to be stored beside the original. If at any point one of your backups becomes lost or unusable, best practice would be to move all of your funds into a fresh multisig vault.
 
 ## Updating Bitcoin Core on the Full Node (online Computer)
 
-This guide will be updated to support the latest stable release of Bitcoin Core. That means the scripts provided in this guide will not work for you if you do not have the latest version installed. When this happens the version of Bitcoin on your computer `~/Bitcoin-31.1` will look different than the number in the scripts in this guide. 
+This guide will be updated to support the latest stable release of Bitcoin Core. That means the scripts provided in this guide will not work for you if you do not have the latest version installed. When this happens the version of Bitcoin on your computer `~/bitcoin-31.1` will look different than the number in the scripts in this guide. 
 
 To upgrade the software on your node to the latest version, simply run this command in the terminal:
 
 ```
-rm -r ~/bitcoin-31.
+rm -r ~/bitcoin-31.1
 ```
 
 Then repeat steps A2 through A4 on your online computer. You will NOT need to redownload the blockchain after updating the software to the latest version.
