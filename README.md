@@ -59,7 +59,7 @@ Once you have the Linux USB ready, the next step will be to install Linux on the
 
 After the Ubuntu splash screen select `Install Ubuntu`.
 
-During installation, simply proceed with all of the default settings, when you reach the "Disk Setup" screen select "Erase disk and install Ubuntu". When you reach the "Encryption and File System" screen select "Encrypt with a passphrase". Choose a password for the node, remember to write down this password (if you lose this password you will have to reinstall Ubuntu and resync the node, but the bitcoin wallet will not be affected).
+During installation, simply proceed with all of the default settings, when you reach the "Disk Setup" screen select "Erase disk and install Ubuntu". When you reach the "Encryption and File System" screen select "Encrypt with a passphrase". Choose a password for the node, remember to write down this password (if you lose this password you will have to reinstall Ubuntu and resync the node, but the Bitcoin wallet will not be affected).
 
 
 ## Step A2. [online computer] Install Security Updates
@@ -191,7 +191,7 @@ sudo apt update
 sudo apt -y install brasero
 ```
 
-Press enter and wait for it to finish. You may see a dpkg error in the terminal after installing brasero but this can safely be ignored.
+Press enter and wait for it to finish. You may see a dpkg error in the terminal after installing Brasero but this can safely be ignored.
 
 Note: The authenticity of the Brasero software is automatically checked by Ubuntu's apt package manager. Brasero is needed so we can make backups of our keys and burn them to M-Discs.
 
@@ -214,7 +214,7 @@ Swap space is virtual RAM that is borrowed from the internal storage drive. Open
 sudo swapoff -a
 ```
 
-# B. Creating a Multi Signature Cold Wallet on Bitcoin Core
+# B. Creating a Multi-Signature Cold Wallet on Bitcoin Core
 
 ## Step B1: [\*offline computer\*] Start Bitcoin Core
 
@@ -294,7 +294,7 @@ You can use either bitcoin-cli or bitcoin-qt (Bitcoin Core's graphical user inte
 ## Step B6: [\*offline computer\*] Backup Keys
 Now back up each of the 7 keys and the wallet descriptor.
 
-Use brasero to create 7 M-Disc backups. These files can be found in the `~/.bitcoin/wallets` folder. Take an M-Disc and write the number 1 on it with a permanent marker, insert disc 1 into the USB connected disc drive. Then use Brasero create an ISO of key_1 & the multisig_watch_wallet from `~/.bitcoin/wallets` along with README.md which is a copy of this guide. Burn this ISO to disc 1. Repeat for all 7 keys.
+Use Brasero to create 7 M-Disc backups. These files can be found in the `~/.bitcoin/wallets` folder. Take an M-Disc and write the number 1 on it with a permanent marker, insert disc 1 into the USB connected disc drive. Then use Brasero to create an ISO of key_1 & the multisig_watch_wallet from `~/.bitcoin/wallets` along with README.md which is a copy of this guide. Burn this ISO to disc 1. Repeat for all 7 keys.
 
 1 = key_1 & multisig_watch_wallet
 
@@ -404,7 +404,7 @@ Insert the transfer USB (no tape) into the \*offline computer\*. Copy or drag an
 
 [Verify the PSBT contents](verify_psbt.md).
 
-Note: Verifying the PSBT is not necessary for test transactions, but when moving larger amounts you should always verify the contents before and after signing. It is worth practicing the process on at least1 test transaction. 
+Note: Verifying the PSBT is not necessary for test transactions, but when moving larger amounts you should always verify the contents before and after signing. It is worth practicing the process on at least 1 test transaction. 
 
 ### [\*offline computer\*] Load the Keys
 Choose 3 of the M-Discs, insert them one at a time into the \*offline computer\*'s USB connected disc drive, and copy the key_# directory into `~/.bitcoin/wallets`.
@@ -478,7 +478,7 @@ Repeat this process (steps C1 through C6) until you've tested all 7 of the key b
 
 3rd transaction: key7, + any 2 other keys
 
-Warning: If any of the test transactions fail during this process, the best thing to do is to go back to step C4 and try again. If it still doesn't work then something is wrong and you should stop. Delete all PSBTs on both computers' `~/Desktop`. Delete the multisig_watch_wallet on the transfer usb. Delete both of the `.bitcoin/wallets` folders on both computers, and start over at step A5 with fresh M-Discs.
+Warning: If any of the test transactions fail during this process, the best thing to do is to go back to step C4 and try again. If it still doesn't work then something is wrong and you should stop. Delete all PSBTs on both computers' `~/Desktop`. Delete the multisig_watch_wallet on the transfer USB. Delete both of the `.bitcoin/wallets` folders on both computers, and start over at step A5 with fresh M-Discs.
 
 Only after you have successfully completed all 3 test transactions, testing all 7 keys as described above, will you have confirmed that the wallet is working properly.
 

@@ -52,7 +52,7 @@ As you can see in the photo this PSBT contains two different outputs (`n:0` and 
 
 Within an output, you are looking for the `address` and the `value` field. Assuming you can remember how much BTC you are sending and to what address, you can compare these two outputs to determine which is the destination output and which is the change output. 
 
-If the `address` and `value` do not match what you expect for the destination output, **STOP! DO NOT PROCEED! Re-evaluate the above steps. An attack may be trying to steal your funds.**
+If the `address` and `value` do not match what you expect for the destination output, **STOP! DO NOT PROCEED! Re-evaluate the above steps. An attacker may be trying to steal your funds.**
 
 Once you have identified the change output, you should then run the following command in the terminal (replacing `$change_address` with the actual change address obtained from the output) to verify that it belongs to your wallet:
 

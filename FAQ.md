@@ -2,13 +2,13 @@
 
 ## Q: What is the purpose of this guide?
 
-A: The main purpose of this guide is to provide users with a complete, opinionated and well reasoned start-to-finish process on setting up a secure Bitcoin Multisig vault that is easy for users with little experience to follow. 
+A: The main purpose of this guide is to provide users with a complete, opinionated and well-reasoned start-to-finish process on setting up a secure Bitcoin Multisig vault that is easy for users with little experience to follow. 
 
 The second purpose of this guide is to educate users on what a secure & well-designed key management system looks like and how all of the design tradeoffs were made. 
 
 ## Q: Why Bitcoin Core?
 
-A: Bitcoin Core is the reference implementation for Bitcoin. It is one of the most conservative and highly scrutinized pieces of software in the world. It is the foundational pillar upon which the entire network rests. Linux is also one of the most conservative and highly scrutinized pieces of software in the world. It is the foundational pillar of safe and reliable Open Source Software. By using self installed Linux + Bitcoin Core as our foundation we are striving to create the smallest possible attack surface for secure Bitcoin Storage.
+A: Bitcoin Core is the reference implementation for Bitcoin. It is one of the most conservative and highly scrutinized pieces of software in the world. It is the foundational pillar upon which the entire network rests. Linux is also one of the most conservative and highly scrutinized pieces of software in the world. It is the foundational pillar of safe and reliable Open Source Software. By using self-installed Linux + Bitcoin Core as our foundation we are striving to create the smallest possible attack surface for secure Bitcoin Storage.
 
 By relying on highly trusted & highly scrutinized software like Bitcoin Core to perform all security critical functions, we can avoid introducing bugs (or attacks) that might slip through less conservative change review processes for software that rewrites critical core functions of a Bitcoin wallet or potentially brings in other unvetted 3rd party libraries and dependencies. 
 
@@ -25,7 +25,7 @@ A: Yes, of course. Software is written by humans and humans are prone to make mi
 
 ## Q: Why not use hardware wallets?
 
-A: The answer to this question is largely the same as above. We do not support hardware wallets when making self custody recommendations because they introduce a significant software & hardware supply chain attack surface when compared to self installed Linux + Bitcoin Core.
+A: The answer to this question is largely the same as above. We do not support hardware wallets when making self custody recommendations because they introduce a significant software & hardware supply chain attack surface when compared to self-installed Linux + Bitcoin Core.
 
 The fewer trusted 3rd parties you put between yourself and your Bitcoin, the better.
 
@@ -76,9 +76,9 @@ If you wish to add your own entropy to this entropy pool, say the result of 100 
 
 There is no need to do this, Linux & Bitcoin Core are better at generating secure random entropy than humans, but you cannot hurt your entropy pool by adding to it in this way.
 
-If you feel that you cannot trust these things then you should know you also cannot trust this guide, the website it is on, or any software you download via the internet. Web pages, signed software binaries like Bitcoin core, and GitHub commits are all examples of things we trust because they are signed with computer generated private keys. 
+If you feel that you cannot trust these things then you should know you also cannot trust this guide, the website it is on, or any software you download via the internet. Web pages, signed software binaries like Bitcoin Core, and GitHub commits are all examples of things we trust because they are signed with computer generated private keys. 
 
-## Q: Why is the vault a 3-of-7? Why not a 2 of 5 or an M of N?
+## Q: Why is the vault a 3-of-7? Why not a 2-of-5 or an M-of-N?
 
 A: We feel that 7 backups is a good number. It's enough to provide plenty of redundancy in most conceivable SHTF scenarios. With 7 keys in the multisig you can lose 4 and still retain access to your money. We have more than double the amount of keys in the quorum than are required to reach signing threshold. 
 
@@ -100,7 +100,7 @@ A: As the amount of value you are securing in a Bitcoin multisig vault grows, it
 
 ## Q: What is the biggest weakness of Yeti-2.0?
 
-A: We believe the biggest weakness of this guide is that the wallet descriptors are not encrypted. This means that anyone who gets access to one of your wallet backups and knows how to load a descriptor, will be able to see your wallet balance. There are ways to mitigate this risk, but it is outside the scope of this guide. The privacy & security that you get from this set up is still an order of magnitude better than what you get from most competing bitcoin self custody stacks.
+A: We believe the biggest weakness of this guide is that the wallet descriptors are not encrypted. This means that anyone who gets access to one of your wallet backups and knows how to load a descriptor, will be able to see your wallet balance. There are ways to mitigate this risk, but it is outside the scope of this guide. The privacy & security that you get from this setup is still an order of magnitude better than what you get from most competing bitcoin self custody stacks.
 
 ## Q: Why not encrypt the backup discs?
 
@@ -150,15 +150,15 @@ To load this watch-only wallet descriptor back into your node, boot into your of
 
 ## Q: What would happen to my Bitcoin if this guide disappears tomorrow?
 
-A: Nothing would happen to your Bitcoin. The advantage of Yeti-2.0 is that you do not need this guide to spend or receive with the wallet. The only things you absolutely need to spend your Bitcoin is the official Bitcoin reference client software, Bitcoin Core, and an Optical Media drive capable of reading DVDs. 
+A: Nothing would happen to your Bitcoin. The advantage of Yeti-2.0 is that you do not need this guide to spend or receive with the wallet. The only things you absolutely need to spend your Bitcoin are the official Bitcoin reference client software, Bitcoin Core, and an Optical Media drive capable of reading DVDs. 
 
-It's still a good idea to keep a copy of the ReadMe on each key backup disc for reference, but this guide is not a single point of failure. A reasonably competent person could spend a few hours reading the Bitcoin Core API documentation and figure out how to send and receive Bitcoin from the multisig wallet configured with this guide all on their own.
+It's still a good idea to keep a copy of the README on each key backup disc for reference, but this guide is not a single point of failure. A reasonably competent person could spend a few hours reading the Bitcoin Core API documentation and figure out how to send and receive Bitcoin from the multisig wallet configured with this guide all on their own.
 
 ## Q: Can I use Tor for this? Can I use TAILS for the offline signer OS?
 
-A: You certainly could do these things. For the sake of keeping the main guide tight we opted not to include Tor as this will considerably slow down the Initial Block Download. Tails was considered for the offline signer but we ultimately determined the time spent creating a second bootable live system wasn't worth it when we already had an ubuntu live system which meets our needs sufficiently. 
+A: You certainly could do these things. For the sake of keeping the main guide tight we opted not to include Tor as this will considerably slow down the Initial Block Download. Tails was considered for the offline signer but we ultimately determined the time spent creating a second bootable live system wasn't worth it when we already had an Ubuntu live system which meets our needs sufficiently. 
 
-These would be potential subguide ideas if you are interested in contributing. Obviously any recomendations to users need to be thorough & properly end to end tested within the context of the main guide, see the [contribution guide](contributions.md) for more information.
+These would be potential subguide ideas if you are interested in contributing. Obviously any recommendations to users need to be thorough & properly end to end tested within the context of the main guide, see the [contribution guide](contributions.md) for more information.
 
 ## Q: Why not keep the offline signer permanently offline? 
 
@@ -168,11 +168,11 @@ There are several reasons we opted not to do this. The first reason is because i
 
 The second reason is related to the first, in that the scripts provided in this guide assume the user is running the latest release of Bitcoin Core. If the user has Bitcoin-31.1 on their USB stick and the scripts in the guide are updated to Bitcoin-31.2, suddenly those scripts will no longer work for the user, and it may be unclear why. 
 
-The third reason is because permissions conflicts can occur on linux when you import software like Bitcoin Core rather than downloading it directly, accounting for these potential permissions conflicts was deemed undesirable.
+The third reason is because permissions conflicts can occur on Linux when you import software like Bitcoin Core rather than downloading it directly, accounting for these potential permissions conflicts was deemed undesirable.
 
 We believe these tradeoffs are acceptable. Key material never touches the device while it is network enabled. Creating your offline signer from scratch each time instead of keeping it for later reduces attack surface by ensuring key material never persists. It also reduces complexity by reducing the amount of materials users need to track in between uses. 
 
-However, if you prefer to keep your offline signer always offline after initial keygen and backup, this would not require much additional work. Keep a copy of Bitcoin Core on a USB stick and import it to your offline machine, be prepared to troubleshoot any issues that might arise with scripts or permissions from doing so, these issues are not insurmountable, and complete process for doing so could be added as a subguide.
+However, if you prefer to keep your offline signer always offline after initial keygen and backup, this would not require much additional work. Keep a copy of Bitcoin Core on a USB stick and import it to your offline machine, be prepared to troubleshoot any issues that might arise with scripts or permissions from doing so, these issues are not insurmountable, and a complete process for doing so could be added as a subguide.
 
 ## Q: Can I use assumeutxo to speed up the IBD on the full node?
 
@@ -182,7 +182,7 @@ In the meantime you could export the xpubs on the transfer USB, and reconstruct 
 
 ## Q: Can I use a pruned node?
 
-A: You can use a pruned node but it is not recomended. Pruning will help lower equipment costs for this guide, and a full archival node is not technically a requirement for our purposes. Pruning is perfectly safe from a security perspective, however it can lead to annoying circumstances where you may have to resync the bitcoin blockchain from scratch when loading a wallet. The authors of this guide prefer not to use pruned nodes for this reason.
+A: You can use a pruned node but it is not recommended. Pruning will help lower equipment costs for this guide, and a full archival node is not technically a requirement for our purposes. Pruning is perfectly safe from a security perspective, however it can lead to annoying circumstances where you may have to resync the bitcoin blockchain from scratch when loading a wallet. The authors of this guide prefer not to use pruned nodes for this reason.
 
 For more information see the [pruning subguide](pruning.md).
 

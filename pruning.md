@@ -2,7 +2,7 @@
 
 If you wish to use a pruned node you should first copy the `~/bitcoin-31.1/bitcoin.conf` into your `~/.bitcoin` folder on your online computer. Then you will want to open the `bitcoin.conf` file for editing (use Text Editor unless you know vim or nano).
 
-On a new line (any line that does not start with a `##`) add the following `prune=5500`. This number corresponds to the size of your prune cache. The number provided here is 5.5GB. It is not recomended that you exceed approximately 70% of your available storage space on your online computer for your prune cache, but a larger prune cache is better.
+On a new line (any line that does not start with a `##`) add the following `prune=5500`. This number corresponds to the size of your prune cache. The number provided here is 5.5GB. It is not recommended that you exceed approximately 70% of your available storage space on your online computer for your prune cache, but a larger prune cache is better.
 
 If you have 64GB of internal storage space use `prune=10000`.
 
@@ -38,7 +38,7 @@ If you encounter the above error after attempting to load your "multisig_watch_w
 
 ...This is a common issue encountered when importing wallets to a pruned node, the reason this error occurs is because a pruned node does not keep the full blockchain history.
 
-The best way to avoid encountering this error is to use a [full archival node](https://github.com/bowlarbear/yeti-2.0/blob/main/FAQ.md#q-what-if-i-do-not-want-to-use-a-pruned-node). The second best way to avoid this error is to load your wallet into your online computer while it is still performing the initial sync of the Bitcoin blockchain, however, if you do encounter this error there is an easy solution...
+The best way to avoid encountering this error is to use a [full archival node](https://github.com/bowlarbear/yeti-2.0/blob/main/FAQ.md#q-can-i-use-a-pruned-node). The second best way to avoid this error is to load your wallet into your online computer while it is still performing the initial sync of the Bitcoin blockchain, however, if you do encounter this error there is an easy solution...
 
 ### How to fix the problem
 

@@ -1,7 +1,7 @@
 # Security Policy
 
 Yeti 2.0 is an opinionated key management tutorial, not an application. This repository
-contains documentation and shell commands for building an airgapped
+contains documentation and shell commands for building an air-gapped
 Bitcoin Core multisig vault. It does not ship software to install.
 
 Security for users of this guide depends on:
@@ -21,7 +21,7 @@ reasonably cause:
   untrusted software or a tampered transaction
 - funds to become unspendable or easier to steal than the guide claims
 - a dangerous command, omitted isolation step, or stale download URL /
-  version that undermines the airgap or backup design
+  version that undermines the air-gap or backup design
 
 Examples: a command that copies a wallet.dat onto the online machine;
 a verify step that still passes on a substituted binary; a backup
@@ -82,7 +82,7 @@ supported text of the guide.
 
 ## Operator responsibility
 
-This guide cannot protect funds if the airgap is broken, backups are
+This guide cannot protect funds if the air-gap is broken, backups are
 not tested, discs are not distributed, or verification steps are
 skipped. Before storing meaningful value, complete the test
 transactions described in the README.

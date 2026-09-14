@@ -4,7 +4,7 @@ Replacing the internal storage drive in a laptop computer is not difficult, even
 
 The reason we choose to upgrade our online computer to a full archival node instead of pruning is to alleviate the annoying difficulties that can sometimes come with attempting to load a wallet into a pruned node.
 
-If you are intimidated by this process, the best thing to do is to look up a teardown guide for your specific model laptop. The steps here will be for a Thinkpad T440, which will only provide you a more generalized overview if your model laptop is different.
+If you are intimidated by this process, the best thing to do is to look up a teardown guide for your specific model laptop. The steps here will be for a ThinkPad T440, which will only provide you a more generalized overview if your model laptop is different.
 
 If you would, for some reason, prefer not to do this, [see here](pruning.md) for a brief pruning guide. 
 
@@ -16,7 +16,7 @@ First ensure the laptop is turned off and unplugged. Then, close the laptop and 
 
 ![Battery removal step](./images/Lenovo-ThinkPad-T440p-Disassembly-1.JPG)
 
-Next, Remove the two screws in the top right and left corner on either side of the battery port.
+Next, remove the two screws in the top right and left corner on either side of the battery port.
 
 ![Screw removal step](./images/Lenovo-ThinkPad-T440p-Disassembly-2.JPG)
 
