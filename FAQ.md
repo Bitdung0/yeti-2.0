@@ -70,7 +70,7 @@ A much better way to add redundancy rather than hand writing wallet descriptors 
 
 ## Q: Why can't I provide my own entropy with dice rolls or coin flips?
 
-A: You can. Well-designed free and open source software like Linux, Bitcoin Core, OpenSSH, OpenSSL, GPG/PGP etc. uses OS level entropy from several independent sources including the Operating System CSPRNG, Hardware RNG from the CPU, dynamic environment data and user activity. This is the sotware industry standard for creating secure private keys.
+A: You can. Well-designed free and open source software like Linux, Bitcoin Core, OpenSSH, OpenSSL, GPG/PGP etc. uses OS level entropy from several independent sources including the Operating System CSPRNG, Hardware RNG from the CPU, dynamic environment data and user activity. This is the software industry standard for creating secure private keys.
 
 If wish to add your own entropy to this entropy pool, say the result of 100 dice rolls, you can simply type the result of each dice roll onto your keyboard before using Bitcoin Core to generate your keys. This activity is captured by the operating system and added to your entropy pool.
 
@@ -164,7 +164,7 @@ These would be potential subguide ideas if you are interested in contributing. O
 
 A: You can do this, you could keep a copy of the Bitcoin software on a USB stick and import it to your offline computer each time you boot it so as to avoid temporarily connecting to a network to redownload Bitcoin Core.
 
-There are several reasons we opted not to do this. The first reason is because its good practice to always use the latest version of the sotware. If a user has an older version of the software stored on a USB stick, they may not update the software before using their signer. 
+There are several reasons we opted not to do this. The first reason is because its good practice to always use the latest version of the software. If a user has an older version of the software stored on a USB stick, they may not update the software before using their signer. 
 
 The second reason is related to the first, in that the scripts provided in this guide assume the user is running the latest release of Bitcoin Core. If the user has Bitcoin-31.1 on their USB stick and the scripts in the guide are update to Bitcoin-31.2, suddenly those scripts will no longer work for the user, and it may be unclear why. 
 
