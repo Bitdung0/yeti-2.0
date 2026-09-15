@@ -10,7 +10,7 @@ The second purpose of this guide is to educate users on what a secure & well-des
 
 A: Bitcoin Core is the reference implementation for Bitcoin. It is one of the most conservative and highly scrutinized pieces of software in the world. It is the foundational pillar upon which the entire network rests. Linux is also one of the most conservative and highly scrutinized pieces of software in the world. It is the foundational pillar of safe and reliable Open Source Software. By using self-installed Linux + Bitcoin Core as our foundation we are striving to create the smallest possible attack surface for secure Bitcoin Storage.
 
-By relying on highly trusted & highly scrutinized software like Bitcoin Core to perform all security critical functions, we can avoid introducing bugs (or attacks) that might slip through less conservative change review processes for software that rewrites critical core functions of a Bitcoin wallet or potentially brings in other unvetted 3rd party libraries and dependencies. 
+By relying on highly trusted, highly scrutinized, & highly audited software like Bitcoin Core to perform all security critical functions, we can avoid introducing bugs (or attacks) that might slip through less conservative change review processes for software that rewrites critical core functions of a Bitcoin wallet or potentially brings in other unvetted 3rd party libraries and dependencies. 
 
 ## Q: Why not use electrum or `<insert software stack>`
 
@@ -20,7 +20,7 @@ Thus, while it might make for a more convenient or pretty user experience to int
 
 ## Q: Is it possible for Bitcoin Core or Linux to have unknown vulnerabilities?
 
-A: Yes, of course. Software is written by humans and humans are prone to make mistakes. Some humans even do bad things on purpose. This is the entire premise behind our design philosophy. Minimize trusted third parties, minimize dependencies, lean heavily on the most trusted and heavily scrutinized software with the best change control processes. Keep it lean and keep it tight.
+A: Yes, of course. Software is written by humans and humans are prone to make mistakes. Some humans even do bad things on purpose. This is the entire premise behind our design philosophy. Minimize trusted third parties, minimize dependencies, lean heavily on the most trusted and heavily scrutinized software with the best change control processes and independent build audits. Keep it lean and keep it tight.
 
 
 ## Q: Why not use hardware wallets?
