@@ -8,7 +8,7 @@ Guide Version: 1.25
 
 This guide was created using Bitcoin Core's [official multisig-tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/multisig-tutorial.md) and [offline signing tutorial](https://github.com/bitcoin/bitcoin/blob/master/doc/offline-signing-tutorial.md) as a reference. 
 
-Users can verify the scripts found in Yeti-2.0 by comparing them to the scripts provided in the official Bitcoin Core multisig tutorial. Our design goal is to avoid adding complexity to or deviating from the official scripts, and to optimize for readability & auditability by a non technical lay person.
+Users can verify the scripts found in Yeti-2.0 by comparing them to the scripts provided in the official Bitcoin Core multisig tutorial. We have intentionally avoided adding complexity to or deviating from the official scripts, in order to optimize for readability & auditability by a non technical lay person.
 
 Our design goal is to improve the usability of the official multisig guide, as well as provide setup instructions for a secure full archival node & 3-of-7 multisig vault, full wallet & key backups, and an easy to use air-gapped signing device. This guide functions both as an educational tool and alternative to [YetiCold Level 3](https://github.com/jwweatherman/yeticold) for users who prefer to do things manually, verify every step of the process, and minimize dependencies.
 
