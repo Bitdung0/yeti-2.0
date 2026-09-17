@@ -41,7 +41,7 @@ The metadata collection in the vendor distribution of specialty hardware is also
 
 A: If you follow this guide from start to finish, setup mistakes will not cost your real funds. An error usually means you stop, go back a few steps and retry. The worst case during setup is lost time, a few wasted discs, or a small test deposit stuck in an unfinished vault. That is why this guide has you test end to end with a small amount before moving anything that matters into it. 
 
-Once that test spend and recovery have been properly completed, you are using the fully configured vault. Any risk from that point forward is operational: keep the keys & verify what you sign.
+Once that test spend and recovery have been properly completed, you are using the fully configured vault. Any risk from that point forward is operational: keep the keys and verify what you sign.
 
 ## Q: Why don't you have users write down seed phrases?
 
@@ -51,7 +51,7 @@ We do not use these seed phrases because Bitcoin Core does not support them.
 
 Bitcoin native multisig on Bitcoin Core makes use of Bitcoin script embedded in the wallet descriptors and WIF keys. The logic embedded in wallet descriptors for a multisig vault is inseparable from the keys and not compatible with something like the non standard BIP 39 seed phrase stamped into steel.
 
-Beyond this, we back up in Bitcoin Core's WIF and wallet descriptor formats so recovery does not depend on a mnemonic standard Core does not implement. We use archival grade optical discs and refresh them every 7-10 years so the copy itself does not rot. We use the CD/DVD form factor because it is a long-stable spec and is readable with cheap, generic drives. This means recovery does not depend on Bitcoin specific hardware devices.
+Beyond this, we back up in Bitcoin Core's WIF and wallet descriptor formats so recovery does not depend on a mnemonic standard Core does not implement. We use archival grade optical discs and refresh them every 7-10 years so the copy itself does not rot. We use the CD/DVD form factor because it is a long-stable spec and is readable with cheap, generic drives. This means recovery does not depend on Bitcoin-specific hardware devices.
 
 ## Q: Why M-Discs specifically?
 
@@ -99,7 +99,7 @@ A: As the amount of value you are securing in a Bitcoin multisig vault grows, it
 
 ## Q: What is the biggest weakness of Yeti-2.0?
 
-A: We believe the biggest weakness of this guide is that the wallet descriptors are not encrypted. This means that anyone who gets access to one of your wallet backups and knows how to load a descriptor, will be able to see your wallet balance. There are ways to mitigate this risk, but it is outside the scope of this guide. The privacy & security that you get from this setup is still considerably better than stacks that add Bitcoin specific vendor hardware and extra wallet software.
+A: We believe the biggest weakness of this guide is that the wallet descriptors are not encrypted. This means that anyone who gets access to one of your wallet backups and knows how to load a descriptor, will be able to see your wallet balance. There are ways to mitigate this risk, but it is outside the scope of this guide. The privacy & security that you get from this setup is still considerably better than stacks that add Bitcoin-specific vendor hardware and extra wallet software.
 
 ## Q: Why not encrypt the backup discs?
 
@@ -109,11 +109,11 @@ The proper way to encrypt backup discs such that no snoop could ever get ahold o
 
 ## Q: Why not generate all of the keys on different computers?
 
-A: You can generate each key on a different computer, but that is outside the scope of this guide. It would make the vault more secure, and it would also add a lot of set up cost: as many as six extra machines and atleast fifteen data transers to build the multisig and back up the descriptor. Using one or two extra computers is a middle ground, and it still adds logistical complexity. 
+A: You can generate each key on a different computer, but that is outside the scope of this guide. It would make the vault more secure, and it would also add a lot of set up cost: as many as six extra machines and at least fifteen data transfers to build the multisig and back up the descriptor. Using one or two extra computers is a middle ground, and it still adds logistical complexity. 
 
-This would be more appropriate in very high security scenarios (vaults designed for storing >$5M), this guide generates all seven keys on one dedicated offline machine. That machine is a generic computer with a self-installed, verified copy of Linux, used only for this process and kept offline. Key generation is done by Linux and Bitcoin Core, not by extra Bitcoin-specific firmware or libraries. 
+This would be more appropriate in very high security scenarios (vaults designed for storing >$5M). This guide generates all seven keys on one dedicated offline machine. That machine is a generic computer with a self-installed, verified copy of Linux, used only for this process and kept offline. Key generation is done by Linux and Bitcoin Core, not by extra Bitcoin-specific firmware or libraries. 
 
-Modern computing is built on the assumption that computers can generate secrets that are random and private enough to trust. That job is done by CSPRNG. People often distrust it because they have seen the results of poorly reviewed wallet software. This is a good reason to avoid less scrutinized hardware devices and wallet software. It is not a good reason to treat a verified Linux + Bitcoin Core setup as unable to safely generate keys.
+Modern computing is built on the assumption that computers can generate secrets that are random and private enough to trust. That job is done by a CSPRNG. People often distrust it because they have seen the results of poorly reviewed wallet software. This is a good reason to avoid less scrutinized hardware devices and wallet software. It is not a good reason to treat a verified Linux + Bitcoin Core setup as unable to safely generate keys.
 
 We accept one dedicated offline machine to generate our keys because of how we configure the machine for that task in the guide. 
 
