@@ -2,11 +2,13 @@
 
 Since you could be downloading Ubuntu on any machine, we cannot assume the instructions will be for a Linux user. Choose your operating system from the list below and follow the instructions.
 
+Note: Ensure that the version of Ubuntu you have downloaded matches the version number in the commands below, this subguide may not always be fully up to date. 
+
 ## Linux users
 
 ```
-wget https://releases.ubuntu.com/26.04/SHA256SUMS
-wget https://releases.ubuntu.com/26.04/SHA256SUMS.gpg
+wget https://releases.ubuntu.com/26.04.1/SHA256SUMS
+wget https://releases.ubuntu.com/26.04.1/SHA256SUMS.gpg
 gpg --keyid-format long --keyserver hkp://keyserver.ubuntu.com --recv-keys 0x46181433FBB75451 0xD94AA3F0EFE21092
 gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS
 sha256sum -c SHA256SUMS 2>&1 | grep OK
@@ -19,8 +21,8 @@ Download gnupg with brew
 `brew install gnupg`
 
 ```
-curl -O https://releases.ubuntu.com/26.04/SHA256SUMS
-curl -O https://releases.ubuntu.com/26.04/SHA256SUMS.gpg
+curl -O https://releases.ubuntu.com/26.04.1/SHA256SUMS
+curl -O https://releases.ubuntu.com/26.04.1/SHA256SUMS.gpg
 gpg --keyid-format long --keyserver hkp://keyserver.ubuntu.com --recv-keys 0x46181433FBB75451 0xD94AA3F0EFE21092
 gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS
 shasum -a 256 -c SHA256SUMS 2>&1 | grep OK
@@ -31,11 +33,11 @@ shasum -a 256 -c SHA256SUMS 2>&1 | grep OK
 Install [gpg4win](https://gpg4win.org)
 
 ```
-curl.exe -O https://releases.ubuntu.com/26.04/SHA256SUMS
-curl.exe -O https://releases.ubuntu.com/26.04/SHA256SUMS.gpg
+curl.exe -O https://releases.ubuntu.com/26.04.1/SHA256SUMS
+curl.exe -O https://releases.ubuntu.com/26.04.1/SHA256SUMS.gpg
 gpg --keyid-format long --keyserver hkp://keyserver.ubuntu.com --recv-keys 0x46181433FBB75451 0xD94AA3F0EFE21092
 gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS
-certUtil -hashfile ubuntu-26.04-desktop-amd64.iso SHA256
+certUtil -hashfile ubuntu-26.04.1-desktop-amd64.iso SHA256
 ```
 
 Eyeball that hash against the matching line in SHA256SUMS...open it with
