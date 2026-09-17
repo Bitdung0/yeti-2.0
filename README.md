@@ -45,7 +45,7 @@ After upgrading the internal storage, we need to install Ubuntu on this computer
 
 [Download the latest version of Ubuntu here](https://ubuntu.com/download/desktop)
 
-You will most likely need the Intel or AMD 64-bit architecture, download the latest version (26.04 as of this post).
+You will most likely need the Intel or AMD 64-bit architecture, download the latest version (26.04.1 as of the latest update to this guide).
 
 You should [verify the Ubuntu download](verify_ubuntu.md) before creating the installer.
 
