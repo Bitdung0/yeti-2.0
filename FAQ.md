@@ -124,7 +124,7 @@ Another idea that comes to mind would be improving the privacy of the onchain fo
 
 Each address has its own unique script hash, and a single spend only publishes the child keys at that one index. This means nobody can derive other addresses for your wallet from one revealed script. Different UTXOs get tied to one wallet only if you combine them as inputs in a single transaction, or observers follow the coin flow of your change. You could mitigate these factors first by never reusing addresses to receive Bitcoin. Second, by using coin control (selecting inputs rather than letting Bitcoin Core do it for you) and building transactions manually. And thirdly by using a reputable coinjoin implementation like Join Market. But this is far beyond the bounds of what is reasonbly necessary for most users and well beyond the scope of this guide. 
 
-Considering yeti-2.0 does not and can not collect any information about its users, unlike hardware vendors and collaborative-custody services that take shipping, billing, or identity data, there is no trusted third party here to receive it. We still believe these are acceptable tradeoffs in their present form.
+Considering yeti-2.0 does not and can not collect any information about its users, unlike hardware vendors and collaborative-custody services that take shipping, billing, or identity data, there is no trusted third party here to receive it. we still believe these are acceptable tradeoffs in their present form for the security model this guide was built around.
 
 ## Q: What should I do if one of my backups gets lost/broken/stolen/tampered with?
 
