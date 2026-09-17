@@ -120,7 +120,7 @@ A: There is always room for improvement. The biggest one that comes to mind outs
 
 However, this adds logistical complexity to the user experience because it requires more boot sessions and more data transfers when spending from the vault. Nothing is stopping you from doing this but it would require deviating from the instructions and terminal commands in the guide slightly.
 
-Another idea that comes to mind would be improving the privacy of the onchain footprint with tools like tapscript.
+Another idea that comes to mind would be improving the privacy of the onchain footprint with tools like tapscript or FROST. Presently the wallet script yeti-2.0 uses gets revealed on chain when you spend coins out the multisig wallet. This in and of itself doesn't mean anything particularly dangerous, but our script is unique enough that it does mean casual observers can track how much money moves out of yeti-2.0 on chain. 
 
 ## Q: What should I do if one of my backups gets lost/broken/stolen/tampered with?
 
