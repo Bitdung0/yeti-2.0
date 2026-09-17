@@ -120,7 +120,9 @@ A: There is always room for improvement. The biggest one that comes to mind outs
 
 However, this adds logistical complexity to the user experience because it requires more boot sessions and more data transfers when spending from the vault. Nothing is stopping you from doing this but it would require deviating from the instructions and terminal commands in the guide slightly.
 
-Another idea that comes to mind would be improving the privacy of the onchain footprint with tools like tapscript or FROST. Presently the wallet script yeti-2.0 uses gets revealed on chain when you spend coins from the multisig wallet. This in and of itself doesn't mean anything particularly dangerous, but our script is unique enough that it does mean casual observers can track how much money moves through yeti-2.0 on chain.
+Another idea that comes to mind would be improving the privacy of the onchain footprint with tools like tapscript or FROST. Presently the wallet script yeti-2.0 uses gets revealed on chain when you spend coins from the multisig wallet. This in and of itself doesn't mean anything particularly dangerous, but our script is unique enough that it does mean casual observers can track how much money moves through yeti-2.0 on chain. 
+
+Each address has its own unique script hash, and a single spend only publishes the child keys at that one index. This means nobody can link different UTXOs onchain to to a single wallet unless you combine them as inputs in a single transaction. You could mitigate these factors first by never reusing addresses to receive Bitcoin. Second, by using coin control (selecting inputs rather than letting Bitcoin Core do it for you) and building transactions manually. And thirdly by using a reputable coinjoin implementation like Join Market. But this is far beyond the bounds of what is reasonbly necessary for most users and well beyond the scope of this guide. 
 
 ## Q: What should I do if one of my backups gets lost/broken/stolen/tampered with?
 
