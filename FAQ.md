@@ -123,11 +123,13 @@ A: There is always room for improvement. The biggest one that comes to mind outs
 
 However, this adds logistical complexity to the user experience because it requires more boot sessions and more data transfers when spending from the vault. Nothing is stopping you from doing this but it would require deviating from the instructions and terminal commands in the guide slightly.
 
-Another idea that comes to mind would be improving the privacy of the onchain footprint with tools like tapscript or FROST. Presently the wallet script yeti-2.0 uses gets revealed on chain when you spend coins from the multisig wallet. Our script is unique enough that it does mean casual observers can track how much money moves through yeti-2.0 on chain. 
+Another idea that comes to mind would be improving the privacy of the onchain footprint with tools like tapscript or FROST. Presently the wallet script yeti-2.0 uses gets revealed on chain when you spend coins from the multisig wallet. Our script is unique enough that it does mean casual observers can track how much money moves out of yeti-2.0 wallets on chain. 
 
-Each address has its own unique script hash, and a single spend only publishes the child keys at that one index. This means nobody can derive other addresses for your wallet from one revealed script. Different UTXOs get tied to one wallet only if you combine them as inputs in a single transaction, or observers follow the coin flow of your change. You could mitigate these factors first by never reusing addresses to receive Bitcoin. Second, by using coin control (selecting inputs rather than letting Bitcoin Core do it for you) and building transactions manually. And thirdly by using a reputable coinjoin implementation like Join Market. But this is far beyond the bounds of what is reasonably necessary for most users and well beyond the scope of this guide. 
+We use what is called a wrapped script hash, each address has its own unique script hash, and a single spend only publishes the child keys at that one index. Nobody can derive other addresses for your wallet from one revealed script. In plain english that means someone can only see that you were using yeti scripts onchain after you spend. 
 
-Considering yeti-2.0 does not and can not collect any information about its users, unlike hardware vendors and collaborative-custody services that take shipping, billing, or identity data, there is no trusted third party here to receive it. We still believe these are acceptable tradeoffs in their present form for the security model this guide was built around.
+The first and most important step to protect your privacy under these constraints is to never re-use a Bitcoin address.
+
+Considering yeti-2.0 does not and can not collect any information about its users, unlike hardware vendors and collaborative-custody services that take shipping, billing, or identity data, there is no trusted third party here to receive it and associate you as a Yeti user. We believe these are acceptable tradeoffs in their present form for the security model this guide was built around.
 
 ## Q: What should I do if one of my backups gets lost/broken/stolen/tampered with?
 
