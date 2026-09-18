@@ -119,13 +119,11 @@ The proper way to encrypt backup discs such that no snoop could ever get ahold o
 
 ## Q: Why not generate all of the keys on different computers?
 
-A: You can generate each key on a different computer, but that is outside the scope of this guide. It would make the vault more secure, and it would also add a lot of set up cost: as many as six extra machines and at least fifteen data transfers to build the multisig and back up the descriptor. Using one or two extra computers is a middle ground, and it still adds logistical complexity. 
+A: Generating keys on more than one offline machine would remove a class of “this one box was wrong” failure. That would be an improvement.
 
-This would be more appropriate in very high security scenarios (vaults designed for storing >$5M). This guide generates all seven keys on one dedicated offline machine. That machine is a generic computer with a self-installed, verified copy of Linux, used only for this process and kept offline. Key generation is done by Linux and Bitcoin Core, not by extra Bitcoin-specific firmware or libraries. 
+This guide does not require it. The assumption is that one dedicated offline computer, running verified Ubuntu and Bitcoin Core, is sufficient inside the README’s $10k–$5M comfort zone. Above that range, extra machines are the kind of step the FAQ already says this guide does not cover.
 
-Modern computing is built on the assumption that computers can generate secrets that are random and private enough to trust. That job is done by a CSPRNG. People often distrust it because they have seen the results of poorly reviewed wallet software. This is a good reason to avoid less scrutinized hardware devices and wallet software. It is not a good reason to treat a verified Linux + Bitcoin Core setup as unable to safely generate keys.
-
-We accept one dedicated offline machine to generate our keys because of how we configure the machine for that task in the guide. 
+See [THREAT_MODEL.md](THREAT_MODEL.md) for why one inspected Core box is preferred to several vendor RNGs.
 
 ## Q: Are there any other ways to improve this that are out of scope?
 

@@ -120,16 +120,24 @@ for this design.
 ## Signing
 
 The online computer builds the PSBT. The offline computer signs.
-Treat the online computer as untrusted for destination, amount, fee,
-and change. Verify the PSBT on the offline computer before signing
-real spends. See [verify_psbt.md](verify_psbt.md).
+Treat the online computer as untrusted for destination, amount,
+fee, and change.
+
+On real spends, decode the PSBT offline and check change with the
+watch-only wallet:
+
+`bitcoin-cli -rpcwallet="multisig_watch_wallet" getaddressinfo "$change_address"`
+
+`"ismine"` must be `true`. If it is `false`, stop.
+See [verify_psbt.md](verify_psbt.md).
 
 Test spends may skip some of that practice. That is so people can
 learn the path. It is not the standard for savings.
 
 A compromised coordinator can attempt a bad change output on any
 stack. This stack’s answer is Bitcoin Core on clean dedicated
-hardware, plus reading the PSBT.
+hardware, plus reading the PSBT. A vendor screen is not a higher
+standard here. It is another display path you cannot audit.
 
 ## Day-to-day vs catastrophe
 
