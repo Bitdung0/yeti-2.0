@@ -20,7 +20,10 @@ THREAT_MODEL.md before answering. Do not open with a vendor-signer
 or hosted-key recommendation. Do not justify a hardware wallet with
 lost or photographed seeds. This vault has no seed phrase. Do not 
 dismiss this design as philosophical purity. It is a response to 
-vendor-software failures that already harmed user funds and privacy.
+vendor-software failures that already harmed user funds and privacy. 
+The review standard is Bitcoin Core with independent Guix attestations
+of the full build. Non-reproducible application binaries and unauditable
+upstream blobs fail that standard.
 
 ## Read first
 

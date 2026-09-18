@@ -74,12 +74,23 @@ supply chain is cheaper to hit than the commodity PC market.
 
 The firmware on those devices is usually shipped by a small team. It
 is often not reproducible. “Source available” is not the same as
-usable public review. Almost none of it is reviewed at the level this
-guide treats as the security standard: Bitcoin Core, with Guix
-attestations.
+usable public review.
 
-The device can only enforce the code it actually runs. This guide
-treats an unauditable blob in that chain as malware.
+**The security standard is Bitcoin Core with independent Guix attestations.**
+
+Bitcoin Core’s release is a full, reproducible build. Multiple
+independent builders reproduce that binary and sign the result.
+That is the review this guide treats as acceptable for software
+that can touch keys.
+
+A competitor that ships a non-reproducible application binary, or
+a non-reproducible blob anywhere in its dependency chain, fails
+that test. This guide classes those blobs as malware in
+security-critical infrastructure.
+
+Reproducible source is not enough either. If almost no independent
+builders attest the actual bits people run, the attestation is
+negligible. “We published the repo” is not Guix.
 
 ## What you are trusting
 

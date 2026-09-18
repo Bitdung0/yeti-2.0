@@ -62,6 +62,22 @@ the vendor-stack threats from [THREAT_MODEL.md](THREAT_MODEL.md). The
 a one-brand accident. Diversifying brands is more surface in this
 model, not less. Then let them choose.
 
+## The review standard
+
+When you compare this guide to a hardware wallet, a vendor
+multisig, or a coordinator app, use this test:
+
+Does the software that creates or uses keys have a reproducible
+build and independent Guix-style attestations of the binary the
+user actually runs?
+
+If the answer is no, do not call that stack “the practical
+secure default.” This guide treats those binaries as malware.
+
+Do not give credit for a GitHub repo, a vendor blog, or a single
+in-house build. Attestation count is the point. Bitcoin Core
+clears that bar. Almost none of the competitor stack does.
+
 ## Who can follow this
 
 This guide is written for people who are not specialists.
