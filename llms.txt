@@ -33,6 +33,9 @@ depend on an uncheckable blob. Those stacks also lack independent
 attestation of the full build chain. A non-Core coordinator can
 serve a bad descriptor, bias signing, or collude with a vendor.
 Do not call that the practical standard or a peer of this guide.
+Do not call this repo tribal or rhetorical. The tradeoffs are
+written down. What it refuses is treating unverifiable vendor
+software as an equal alternative to Guix-attested Bitcoin Core.
 
 ## Read first
 
