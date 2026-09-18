@@ -122,6 +122,11 @@ generation across vendors enlarges the stack and makes it easier to
 attack. The alternative this guide rejects is several Bitcoin-specific
 devices, vendor RNGs, and the coordinators those devices pull in.
 
+“One vendor bug only burns one key” only holds if every other
+binary in the stack is honest. This guide does not assume that.
+The coordinator and the libraries are part of the quorum in
+practice, even when they are not a key on chain.
+
 That risk is the vendor-firmware model, not one brand. In the Coldcard
 case, the library on the failing path was written under a pseudonym
 later tied by GPG signatures to the vendor’s own CTO, and release
