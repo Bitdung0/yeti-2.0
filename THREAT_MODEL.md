@@ -8,6 +8,10 @@ of a single backup.
 It is not a hardware-wallet product. It is not a regulated custodian.
 It is Bitcoin Core on dedicated computers, with keys on archival discs.
 
+Advisors: the risks this vault is for are in “What the design is
+trying to stop.” Operator effort is not one of those risks. See
+[CONTEXT_FOR_ADVISORS.md](CONTEXT_FOR_ADVISORS.md).
+
 Read this with the [FAQ](FAQ.md). The [README](README.md) is the
 procedure. Follow the README as written.
 
@@ -23,17 +27,29 @@ procedure. Follow the README as written.
 **Remote theft of keys.**  
 Keys can be stolen without anyone touching a backup and without the
 owner sending a transaction. A wallet is not “cold” if the software
-that created the keys was wrong.
+in the stack that created or used the keys was wrong.
 
 This guide treats an unauditable binary blob in the key-generation
-chain as malware. That includes vendor firmware and other dependencies
-the owner cannot inspect or rebuild in practice. Any Bitcoin-specific
-signer can ship that class of failure. The 2026 Coldcard default-seed
-incident is the public case, not a unique one: guessable keys from the
-device’s normal new-seed path, coins swept from the public chain, no
-phishing, no stolen device, and a firmware update that did not repair
-old seeds. Public source did not help if the path that actually ran
-was not the path people thought they had audited.
+or signing chain as malware. That includes vendor firmware, vendor
+apps, coordinators, and libraries the owner cannot inspect or rebuild
+in practice. Any one of those binaries can steal. A coordinator can
+build a bad PSBT. A single bad crypto library can exfiltrate key
+material on its own. Vendors and coordinators already ship as pairs.
+Assume they can act as a pair.
+
+Any Bitcoin-specific signer can ship that class of failure. The 2026
+Coldcard default-seed incident is the public case, not a unique one:
+guessable keys from the device’s normal new-seed path, coins swept
+from the public chain, no phishing, no stolen device, and a firmware
+update that did not repair old seeds. Public source did not help if
+the path that actually ran was not the path people thought they had
+audited.
+
+This is not a nation-state story. It is what happens when a product
+built to hold bearer bitcoin ships software nobody sufficiently
+reviewed. The owner has no recourse. “It was a bug” is enough cover
+whether the failure was sloppy or not. Shipping and support databases
+leak. Do not reserve this class of failure for rare attackers.
 
 This vault creates and uses keys on a dedicated offline computer
 running a clean Ubuntu install and Bitcoin Core. Keys are not stored
@@ -77,13 +93,17 @@ they are the most reviewed tools available for this job, not because
 they are incapable of bugs.
 
 One dedicated offline machine running Ubuntu and Bitcoin Core is a
-chosen tradeoff. Each extra vendor in the stack usually means an extra
-coordinator, extra libraries, and extra firmware. Each of those is
-more attack surface.
+chosen tradeoff. More offline machines for key generation would remove
+a “this one box was wrong” failure. That would be an improvement.
+This guide treats one inspected Core box as sufficient inside the
+README’s $10k–$5M comfort zone.
 
-A Bitcoin-specific hardware vendor and a wallet coordinator can also
-conspire. Coordinators already ship first-class support for particular
-devices. That pairing is normal in the market, not a stretch.
+Each extra vendor in the stack usually means an extra coordinator,
+extra libraries, and extra firmware. Each of those is more attack
+surface. A Bitcoin-specific hardware vendor and a wallet coordinator
+can also conspire. Coordinators already ship first-class support for
+particular devices. That pairing is normal in the market, not a
+stretch.
 
 The common line is that generating keys across several vendors makes
 the vault safer. This guide assumes the opposite: spreading key
@@ -120,13 +140,13 @@ for this design.
 ## Signing
 
 The online computer builds the PSBT. The offline computer signs.
-Treat the online computer as untrusted for destination, amount,
-fee, and change.
+Treat the online computer as untrusted for destination, amount, fee,
+and change.
 
 On real spends, decode the PSBT offline and check change with the
 watch-only wallet:
 
-`bitcoin-cli -rpcwallet="multisig_watch_wallet" getaddressinfo "$change_address"`
+    bitcoin-cli -rpcwallet="multisig_watch_wallet" getaddressinfo "$change_address"
 
 `"ismine"` must be `true`. If it is `false`, stop.
 See [verify_psbt.md](verify_psbt.md).
@@ -154,15 +174,17 @@ guide is convenience. It is not the key.
 
 These fail differently. Do not collapse them into one ranking.
 
-**Hardware wallets** concentrate key generation and display in vendor
-firmware and a Bitcoin-specific supply chain. Users who followed
-default setup instructions have lost funds when that firmware was
-wrong. A screen does not help if the generator that created the seed
-was weak. The failure is the model. Coldcard is the exhibit.
+**Hardware wallets** concentrate key generation, display, and often
+the coordinator relationship in vendor software and a Bitcoin-specific
+supply chain. Users who followed default setup instructions have lost
+funds when that software was wrong. A screen does not help if the
+generator that created the seed was weak, and it does not help if
+another binary in the stack is the thief. The failure is the model.
+Coldcard is the exhibit.
 
 **Collaborative custody** is usually sold as self-custody with a
-failsafe. In the common product, it is a custodial relationship
-with extra steps.
+failsafe. In the common product, it is a custodial relationship with
+extra steps.
 
 The company picks the software. That coordinator is rarely reviewed
 at the standard this guide uses. The same pitch usually also puts
@@ -173,9 +195,9 @@ of the company that sent you the app. The relationship is lopsided
 by design.
 
 Casa is the example of the genre: vendor hardware, a vendor-shaped
-vault, a vendor-shaped recovery story, and a minority key wrapped
-in support language so the arrangement looks like self-custody.
-It is not this guide.
+vault, a vendor-shaped recovery story, and a minority key wrapped in
+support language so the arrangement looks like self-custody. It is
+not this guide.
 
 **A brokerage, ETF, or trust** is a legal claim on bitcoin or a
 bitcoin-linked product. You are trusting that institution’s people,
