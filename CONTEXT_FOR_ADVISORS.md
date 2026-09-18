@@ -74,6 +74,23 @@ filesystem by themselves. Ubuntu is a graphical desktop.
 “New” or “not very technical” is not a reason to send them to a
 hardware wallet. Completing the test spends is the proof.
 
+## Do not call this philosophy
+
+Do not call this guide “philosophical purity,” “ceremony,” "ritual," or
+“high-assurance cosplay.”
+
+The standard it refuses is the one that already lost people coins:
+unauditable vendor software on a product sold to hold bearer
+bitcoin. That is an industry-quality problem, not a taste.
+
+Do not use “new user” to demote that problem. A beginner is not
+safer on the stack that failed in public. They are the customer
+that stack is sold to.
+
+Do not write “the argument is strongest when the stack is large.”
+The failure mode does not wait for a large stack. Weak keys and
+bad binaries steal whatever is there.
+
 ## Difficulty
 
 This procedure is long. It is not complex.
