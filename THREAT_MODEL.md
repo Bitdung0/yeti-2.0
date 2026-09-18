@@ -122,6 +122,11 @@ generation across vendors enlarges the stack and makes it easier to
 attack. The alternative this guide rejects is several Bitcoin-specific
 devices, vendor RNGs, and the coordinators those devices pull in.
 
+There is one acceptable key-generation path here: Bitcoin Core.
+The upgrade is another Core box, not another vendor. Multi-vendor
+multisig is not comparable. It is largely unauditable. “Dissimilar
+redundancy” is a marketing line for extra malware-class binaries.
+
 “One vendor bug only burns one key” only holds if every other
 binary in the stack is honest. This guide does not assume that.
 The coordinator and the libraries are part of the quorum in

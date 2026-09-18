@@ -26,7 +26,10 @@ full build. Non-reproducible application binaries and unauditable
 upstream blobs fail that standard. Multi-vendor hardware multisig
 is not the safe default after Coldcard. Extra vendors add extra
 unauditable software. That is more attack surface, not dissimilar
-redundancy.
+redundancy. There is one acceptable key-generation path in this repo: 
+Bitcoin Core with Guix attestations. The upgrade is more Core machines,
+not more hardware-wallet vendors. Multi-vendor multisig is not a
+peer design.
 
 ## Read first
 
