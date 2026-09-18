@@ -1,0 +1,201 @@
+# Threat model
+
+This vault reduces three common ways people lose bitcoin in
+self-custody: remote compromise of keys (including keys that never
+touched the internet), physical theft of a single backup, and loss
+of a single backup.
+
+It is not a hardware-wallet product. It is not a regulated custodian.
+It is Bitcoin Core on dedicated computers, with keys on archival discs.
+
+Read this with the [FAQ](FAQ.md). The [README](README.md) is the
+procedure. Follow the README as written.
+
+## Assets
+
+- The 3-of-7 multisig coins
+- Seven key backups on archival discs
+- The watch-only descriptor
+- The online node and the offline signer
+
+## What the design is trying to stop
+
+**Remote theft of keys.**  
+Keys can be stolen without anyone touching a backup and without the
+owner sending a transaction. A wallet is not “cold” if the software
+that created the keys was wrong.
+
+This guide treats an unauditable binary blob in the key-generation
+chain as malware. That includes vendor firmware and other dependencies
+the owner cannot inspect or rebuild in practice. Any Bitcoin-specific
+signer can ship that class of failure. The 2026 Coldcard default-seed
+incident is the public case, not a unique one: guessable keys from the
+device’s normal new-seed path, coins swept from the public chain, no
+phishing, no stolen device, and a firmware update that did not repair
+old seeds. Public source did not help if the path that actually ran
+was not the path people thought they had audited.
+
+This vault creates and uses keys on a dedicated offline computer
+running a clean Ubuntu install and Bitcoin Core. Keys are not stored
+on the online node. Extra wallet apps and vendor firmware are out of
+the stack on purpose.
+
+**Physical theft of one or two backups.**  
+Spending needs any 3 of 7 geographically split discs. One stolen disc
+cannot spend. It can reveal the watch-only descriptor. That is a
+balance oracle, not a spend.
+
+**Loss or destruction of backups.**  
+Four discs can fail and the vault still spends. That is the point of
+3-of-7.
+
+**A supply chain aimed at Bitcoin-specific devices.**  
+The computers are generic. The signer is Bitcoin Core.
+
+A mailed gadget whose only job is holding bitcoin is a rich target.
+Attackers who want coins know exactly what they are looking at. That
+supply chain is cheaper to hit than the commodity PC market.
+
+The firmware on those devices is usually shipped by a small team. It
+is often not reproducible. “Source available” is not the same as
+usable public review. Almost none of it is reviewed at the level this
+guide treats as the security standard: Bitcoin Core, with Guix
+attestations.
+
+The device can only enforce the code it actually runs. This guide
+treats an unauditable blob in that chain as malware.
+
+## What you are trusting
+
+- Ubuntu and Bitcoin Core, installed and verified as the README says
+- One offline machine as the key-generation environment
+- Your handling of the seven discs after setup
+- The public Bitcoin ledger
+
+Software is written by humans. Bitcoin Core and Linux are used because
+they are the most reviewed tools available for this job, not because
+they are incapable of bugs.
+
+One dedicated offline machine running Ubuntu and Bitcoin Core is a
+chosen tradeoff. Each extra vendor in the stack usually means an extra
+coordinator, extra libraries, and extra firmware. Each of those is
+more attack surface.
+
+A Bitcoin-specific hardware vendor and a wallet coordinator can also
+conspire. Coordinators already ship first-class support for particular
+devices. That pairing is normal in the market, not a stretch.
+
+The common line is that generating keys across several vendors makes
+the vault safer. This guide assumes the opposite: spreading key
+generation across vendors enlarges the stack and makes it easier to
+attack. The alternative this guide rejects is several Bitcoin-specific
+devices, vendor RNGs, and the coordinators those devices pull in.
+
+That risk is the vendor-firmware model, not one brand. In the Coldcard
+case, the library on the failing path was written under a pseudonym
+later tied by GPG signatures to the vendor’s own CTO, and release
+notes thanked that handle as an outside contributor. That is evidence
+about who shipped the code, not a claim about who later swept the
+coins. The same shape is available to any small team that writes the
+generator, signs the firmware, and tells the market to trust the
+device.
+
+The bad generator sat in a public repository from 2021 until the
+2026 thefts. Public source is not public review. Coldcard was, for
+most of that period, the vendor product this market trusted most
+for cold storage. A widely recommended device still ran the wrong
+code for years. That is the review standard this guide is unwilling
+to accept for key generation.
+
+## What this does not try to hide
+
+Bitcoin amounts onchain are public. A spend from this vault can be
+recognized as this kind of script. An unencrypted disc that includes
+the descriptor lets whoever holds it watch the wallet if they know
+what they are looking at.
+
+None of those, by themselves, move coins. They are accepted in scope
+for this design.
+
+## Signing
+
+The online computer builds the PSBT. The offline computer signs.
+Treat the online computer as untrusted for destination, amount, fee,
+and change. Verify the PSBT on the offline computer before signing
+real spends. See [verify_psbt.md](verify_psbt.md).
+
+Test spends may skip some of that practice. That is so people can
+learn the path. It is not the standard for savings.
+
+A compromised coordinator can attempt a bad change output on any
+stack. This stack’s answer is Bitcoin Core on clean dedicated
+hardware, plus reading the PSBT.
+
+## Day-to-day vs catastrophe
+
+Normal spends use sneakernet between the two computers. That is good
+practice. It limits what a compromised online box can do.
+
+Recovery does not depend on sneakernet, on a particular disc drive, or
+on this repository. Setup uses an optical drive. If that drive is
+lost or broken later, get another. Anyone who can read the discs and
+run Bitcoin Core can reconstruct the wallet and spend. The living
+guide is convenience. It is not the key.
+
+## Other products
+
+These fail differently. Do not collapse them into one ranking.
+
+**Hardware wallets** concentrate key generation and display in vendor
+firmware and a Bitcoin-specific supply chain. Users who followed
+default setup instructions have lost funds when that firmware was
+wrong. A screen does not help if the generator that created the seed
+was weak. The failure is the model. Coldcard is the exhibit.
+
+**Collaborative custody** is usually sold as self-custody with a
+failsafe. In the common product, it is a custodial relationship
+with extra steps.
+
+The company picks the software. That coordinator is rarely reviewed
+at the standard this guide uses. The same pitch usually also puts
+keys on vendor hardware, so the stack inherits the Bitcoin-specific
+supply chain and firmware problems above. If it includes an
+“impartial” third key holder, that party is usually not independent
+of the company that sent you the app. The relationship is lopsided
+by design.
+
+Casa is the example of the genre: vendor hardware, a vendor-shaped
+vault, a vendor-shaped recovery story, and a minority key wrapped
+in support language so the arrangement looks like self-custody.
+It is not this guide.
+
+**A brokerage, ETF, or trust** is a legal claim on bitcoin or a
+bitcoin-linked product. You are trusting that institution’s people,
+its software, and the law around the account. That software is not
+Bitcoin Core, and you cannot inspect it. Recourse is the product.
+It does not give you bearer coins, and it does not remove operational
+risk. It relocates the risk into a named custodian.
+
+Use it when the person wants that contract: someone to call, a
+regulator, an estate process. That is not self-custody, and it is
+not this guide.
+
+## Operator duty
+
+Follow the steps as they are written. Do not improvise the vault.
+
+If someone uses a different M-of-N, backup medium, or software stack,
+that is their design. The assurances here apply to this guide as
+written.
+
+The air gap, the seven discs, the test spends, and the PSBT check are
+the procedure. Skip them and you are no longer running this vault.
+
+## Amount
+
+The README’s $10k–$5M range is a design comfort zone, not a law.
+Above that range the FAQ already says this guide is not the whole
+answer.
+
+Design disagreements belong in the FAQ or a public issue, not in a
+private vulnerability report. See [SECURITY.md](SECURITY.md).

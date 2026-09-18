@@ -11,6 +11,8 @@ Security for users of this guide depends on:
   (primarily Bitcoin Core and Ubuntu)
 - the operator following the guide, including verification steps
 
+See [THREAT_MODEL.md](THREAT_MODEL.md) for the canonical write up.
+
 ## In scope for this repository
 
 Report privately if following the published guide as written could

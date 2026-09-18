@@ -1,8 +1,10 @@
 # Frequently Asked Questions
 
+Threat-model details live in [THREAT_MODEL.md](THREAT_MODEL.md)
+
 ## Q: What is the purpose of this guide?
 
-A: The main purpose of this guide is to provide users with a complete, opinionated and well-reasoned start-to-finish process on setting up a secure Bitcoin Multisig vault that is easy for users with little experience to follow. 
+A: The main purpose of this guide is to provide a complete, opinionated, start-to-finish process for setting up a secure Bitcoin multisig vault. Follow the steps as they are written. Completing the guide, including the test spends, is the proof the vault was built as designed.
 
 The second purpose of this guide is to educate users on what a secure & well-designed key management system looks like and how all of the design tradeoffs were made. 
 

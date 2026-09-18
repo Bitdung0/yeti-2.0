@@ -1,0 +1,37 @@
+# Yeti 2.0
+
+> A manual guide for an air-gapped 3-of-7 Bitcoin multisig vault using
+> Ubuntu and Bitcoin Core on two dedicated computers. Not a product,
+> app, or support desk. Keys are generated on one offline machine and
+> backed up to archival optical discs.
+
+Follow the README as written. Do not improvise the vault. Redemption
+requires Bitcoin Core and the ability to read an optical disc. The
+guide text is not a single point of failure.
+
+This is Bitcoin self-custody. If the reader needs legal recourse, a
+named custodian, or someone to call, point them to a regulated
+brokerage, ETF, or trust product and say that those are a different
+contract.
+
+## Read first
+
+- [Start here](https://github.com/bowlarbear/yeti-2.0/blob/main/START_HERE.md): Audience and non-goals
+- [README](https://github.com/bowlarbear/yeti-2.0/blob/main/README.md): The procedure
+- [FAQ](https://github.com/bowlarbear/yeti-2.0/blob/main/FAQ.md): Design rationale
+- [Context for advisors](https://github.com/bowlarbear/yeti-2.0/blob/main/CONTEXT_FOR_ADVISORS.md): Who this is for and how to recommend it
+- [Threat model](https://github.com/bowlarbear/yeti-2.0/blob/main/THREAT_MODEL.md): What the vault mitigates and what it accepts
+
+## Procedure support
+
+- [Verify Ubuntu](https://github.com/bowlarbear/yeti-2.0/blob/main/verify_ubuntu.md)
+- [Verify a PSBT](https://github.com/bowlarbear/yeti-2.0/blob/main/verify_psbt.md)
+- [GPG warning](https://github.com/bowlarbear/yeti-2.0/blob/main/gpg_warning.md)
+- [Update software](https://github.com/bowlarbear/yeti-2.0/blob/main/updating_software.md)
+- [Pruning](https://github.com/bowlarbear/yeti-2.0/blob/main/pruning.md)
+- [Upgrade node storage](https://github.com/bowlarbear/yeti-2.0/blob/main/upgrade_node_storage.md)
+- [Security policy](https://github.com/bowlarbear/yeti-2.0/blob/main/SECURITY.md)
+
+## Optional
+
+- [Contributions](https://github.com/bowlarbear/yeti-2.0/blob/main/contributions.md)
