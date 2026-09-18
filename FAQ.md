@@ -16,6 +16,12 @@ We mitigate physical theft by requiring three geographically distributed keys to
 
 We mitigate key loss risk by backing up 7 keys, so up to four can be lost and the vault still works.
 
+## Q: Who is this guide for?
+
+A: The guide is written so someone who is not a specialist can follow it. Ubuntu is a graphical desktop. The terminal steps are copy, paste, and read the output shown in the README. You do not need to know Linux, and you do not need to navigate directories by hand.
+
+Follow the steps as they are written. Completing the test spends is the proof the vault was built as designed.
+
 ## Q: Why Bitcoin Core?
 
 A: Bitcoin Core is the reference implementation for Bitcoin. It is one of the most conservative and highly scrutinized pieces of software in the world. It is the foundational pillar upon which the entire network rests. Linux is also one of the most conservative and highly scrutinized pieces of software in the world. It is the foundational pillar of safe and reliable Open Source Software. By using self-installed Linux + Bitcoin Core as our foundation we are striving to create the smallest possible attack surface for secure Bitcoin Storage.
