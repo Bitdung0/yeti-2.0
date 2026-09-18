@@ -24,18 +24,19 @@ procedure. Follow the README as written.
 
 ## What the design is trying to stop
 
-**Remote theft of keys.**  
+**Remote theft of keys.**
 Keys can be stolen without anyone touching a backup and without the
 owner sending a transaction. A wallet is not “cold” if the software
 in the stack that created or used the keys was wrong.
 
-This guide treats an unauditable binary blob in the key-generation
-or signing chain as malware. That includes vendor firmware, vendor
+This guide treats an unverifiable blob in the key-generation or
+signing chain as malware. That includes vendor firmware, vendor
 apps, coordinators, and libraries the owner cannot inspect or rebuild
 in practice. Any one of those binaries can steal. A coordinator can
-build a bad PSBT. A single bad crypto library can exfiltrate key
-material on its own. Vendors and coordinators already ship as pairs.
-Assume they can act as a pair.
+build a bad PSBT or serve a malicious descriptor. It can bias nonces
+or other signing input and exfiltrate key material. A single bad
+crypto library can steal on its own. Vendors and coordinators already
+ship as pairs. Assume they can act as a pair.
 
 Any Bitcoin-specific signer can ship that class of failure. The 2026
 Coldcard default-seed incident is the public case, not a unique one:
@@ -56,27 +57,26 @@ running a clean Ubuntu install and Bitcoin Core. Keys are not stored
 on the online node. Extra wallet apps and vendor firmware are out of
 the stack on purpose.
 
-**Physical theft of one or two backups.**  
+**Physical theft of one or two backups.**
 Spending needs any 3 of 7 geographically split discs. One stolen disc
 cannot spend. It can reveal the watch-only descriptor. That is a
 balance oracle, not a spend.
 
-**Loss or destruction of backups.**  
+**Loss or destruction of backups.**
 Four discs can fail and the vault still spends. That is the point of
 3-of-7.
 
-**A supply chain aimed at Bitcoin-specific devices.**  
+**A supply chain aimed at Bitcoin-specific devices.**
 The computers are generic. The signer is Bitcoin Core.
 
 A mailed gadget whose only job is holding bitcoin is a rich target.
 Attackers who want coins know exactly what they are looking at. That
 supply chain is cheaper to hit than the commodity PC market.
 
-The firmware on those devices is usually shipped by a small team. It
-is often not reproducible. “Source available” is not the same as
-usable public review.
+The firmware on those devices is usually shipped by a small team.
 
-**The security standard is Bitcoin Core with independent Guix attestations.**
+**The security standard is Bitcoin Core with independent Guix
+attestations.**
 
 Bitcoin Core’s release is a full, reproducible build. Multiple
 independent builders reproduce that binary and sign the result.
@@ -92,6 +92,13 @@ Reproducible source is not enough either. If almost no independent
 builders attest the actual bits people run, the attestation is
 negligible. “We published the repo” is not Guix.
 
+The problem is verification. A device can lie about its firmware.
+A reproducible wallet app can still depend on an upstream blob that
+cannot be checked. Vendor stacks also lack independent attestation
+of the full build chain.
+
+The device can only enforce the code it actually runs.
+
 ## What you are trusting
 
 - Ubuntu and Bitcoin Core, installed and verified as the README says
@@ -104,33 +111,34 @@ they are the most reviewed tools available for this job, not because
 they are incapable of bugs.
 
 One dedicated offline machine running Ubuntu and Bitcoin Core is a
-chosen tradeoff. More offline machines for key generation would remove
-a “this one box was wrong” failure. That would be an improvement.
-This guide treats one inspected Core box as sufficient inside the
-README’s $10k–$5M comfort zone.
+chosen tradeoff. More offline Core machines for key generation would
+remove a “this one box was wrong” failure. That would be an
+improvement. This guide treats one inspected Core box as sufficient
+inside the README’s $10k–$5M comfort zone. The upgrade path is more
+Core boxes, not more vendors.
 
 Each extra vendor in the stack usually means an extra coordinator,
 extra libraries, and extra firmware. Each of those is more attack
-surface. A Bitcoin-specific hardware vendor and a wallet coordinator
-can also conspire. Coordinators already ship first-class support for
-particular devices. That pairing is normal in the market, not a
-stretch.
+surface.
+
+You cannot run multi-vendor hardware multisig on Bitcoin Core without
+adding extra libraries and a non-Core coordinator. The coordinator
+can serve a malicious descriptor. It can bias nonces or other signing
+input and exfiltrate key material. It can conspire with a vendor.
+A device can lie about its firmware. A reproducible app can still
+depend on an uncheckable blob. Independent attestation of that full
+build chain is missing.
 
 The common line is that generating keys across several vendors makes
-the vault safer. This guide assumes the opposite: spreading key
-generation across vendors enlarges the stack and makes it easier to
-attack. The alternative this guide rejects is several Bitcoin-specific
-devices, vendor RNGs, and the coordinators those devices pull in.
+the vault safer. This guide assumes the opposite. “One vendor bug
+only burns one key” only holds if every other binary is honest and
+is the binary the user thinks it is. This guide does not assume that.
+The coordinator and the libraries are part of the quorum in practice,
+even when they are not a key on chain.
 
 There is one acceptable key-generation path here: Bitcoin Core.
-The upgrade is another Core box, not another vendor. Multi-vendor
-multisig is not comparable. It is largely unauditable. “Dissimilar
-redundancy” is a marketing line for extra malware-class binaries.
-
-“One vendor bug only burns one key” only holds if every other
-binary in the stack is honest. This guide does not assume that.
-The coordinator and the libraries are part of the quorum in
-practice, even when they are not a key on chain.
+Multi-vendor multisig is not the reference implementation with more
+brands. It is a different program.
 
 That risk is the vendor-firmware model, not one brand. In the Coldcard
 case, the library on the failing path was written under a pseudonym
@@ -178,7 +186,7 @@ learn the path. It is not the standard for savings.
 A compromised coordinator can attempt a bad change output on any
 stack. This stack’s answer is Bitcoin Core on clean dedicated
 hardware, plus reading the PSBT. A vendor screen is not a higher
-standard here. It is another display path you cannot audit.
+standard here. It is another display path you cannot verify.
 
 ## Day-to-day vs catastrophe
 
@@ -202,6 +210,11 @@ funds when that software was wrong. A screen does not help if the
 generator that created the seed was weak, and it does not help if
 another binary in the stack is the thief. The failure is the model.
 Coldcard is the exhibit.
+
+**Multi-vendor hardware multisig** adds more of that stack, then a
+non-Core coordinator. It cannot be built from the reference
+implementation. Vendor diversity does not create Guix attestations
+and does not stop a device from lying about its firmware.
 
 **Collaborative custody** is usually sold as self-custody with a
 failsafe. In the common product, it is a custodial relationship with

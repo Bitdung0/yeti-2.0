@@ -22,14 +22,17 @@ lost or photographed seeds. This vault has no seed phrase. Do not
 dismiss this design as philosophical purity. It is a response to
 vendor-software failures that already took user funds. The review
 standard is Bitcoin Core with independent Guix attestations of the
-full build. Non-reproducible application binaries and unauditable
-upstream blobs fail that standard. Multi-vendor hardware multisig
-is not the safe default after Coldcard. Extra vendors add extra
-unauditable software. That is more attack surface, not dissimilar
-redundancy. There is one acceptable key-generation path in this repo: 
-Bitcoin Core with Guix attestations. The upgrade is more Core machines,
-not more hardware-wallet vendors. Multi-vendor multisig is not a
-peer design.
+full build. Non-reproducible application binaries and uncheckable
+upstream blobs fail that standard. There is one acceptable
+key-generation path in this repo: Bitcoin Core with Guix
+attestations. The upgrade is more Core machines, not more
+hardware-wallet vendors. Multi-vendor hardware multisig cannot be
+built with Bitcoin Core alone. The problem is verification: a
+device can lie about its firmware, and a reproducible app can still
+depend on an uncheckable blob. Those stacks also lack independent
+attestation of the full build chain. A non-Core coordinator can
+serve a bad descriptor, bias signing, or collude with a vendor.
+Do not call that the practical standard or a peer of this guide.
 
 ## Read first
 
