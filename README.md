@@ -533,7 +533,7 @@ For security you should always turn off the \*offline computer\* after you finis
 
 Remember: These two laptops should be dedicated for use with Bitcoin Core ONLY. DO NOT use these two dedicated laptops for any other purpose or software.
 
-Remember: [Keep your software up to date](updating_software.md).
+Remember: [Keep your software up to date](update_software.md).
 
 Remember: You should check your key backups periodically and refresh the backups once every 7-10 years. This would mean copying the contents of a backup disc onto a fresh M-Disc or archival grade DVD, then adding it to the envelope to be stored beside the original. If at any point one of your backups becomes lost or unusable, best practice would be to move all of your funds into a fresh multisig vault.
 

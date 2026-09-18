@@ -8,11 +8,11 @@ To upgrade the software on your node to the latest version, simply run this comm
 rm -r ~/bitcoin-31.1
 ```
 
-Then repeat steps A2 through A4 on your online computer. You will NOT need to redownload the blockchain after updating the software to the latest version.
+Then repeat steps A2 through A4 on your online computer. You will NOT need to redownload the blockchain after updating the software to the latest version because the Bitcoin blockchain lives in `~/.bitcoin`
 
 ## Updating Ubuntu USB stick to the latest version [online computer]
 
-It is a good idea to keep the Ubuntu software on your bootable USB stick up to date. This means that if you have Ubuntu 26.01 installed on your USB, and Ubuntu releases Ubuntu 26.02, it is highly recommended that you also update your bootable USB to the latest Ubuntu version.
+It is a good idea to keep the Ubuntu software on your bootable USB stick up to date. This means that if you have Ubuntu 26.04.1 installed on your USB, and Ubuntu releases Ubuntu 26.04.2, it is highly recommended that you also update your bootable USB to the latest Ubuntu version.
 
 The simplest way to do this is to use your online computer to download the latest version of Ubuntu.
 
@@ -31,7 +31,7 @@ Once it finishes the download run this command to verify the Ubuntu binary.
 ```
 cd ~/Downloads && gpg --keyid-format long --keyserver hkp://keyserver.ubuntu.com --recv-keys 0x46181433FBB75451 0xD94AA3F0EFE21092
 gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS
-sha256sum -c SHA256SUMS
+sha256sum -c SHA256SUMS --ignore-missing
 
 ```
 
@@ -53,24 +53,22 @@ Select your USB drive from the left hand side menu.
 
 ![Gnome Disks Utility Device Selection](./images/Disks-start.png)
 
-Delete each of the partitions on the USB stick by selecting them one by one and pressing the red `-` button. 
-
-![Gnome Disks Utility Delete Partition](./images/Disks-delete.png)
-
-Note: You do not need to delete partitions labeled "Free Space". At the end you will be left with a drive with a single partition, likely called something like "Ubuntu 26.04 amd64"
-
-![Gnome Disks Utility Read Device Path](./images/Disks-finished.png)
-
-Next look at the line that says `Device` and make a note of the path to your USB stick. Here you can see our path is `/dev/sdb`. YOURS MAY BE DIFFERENT.
+Next look at the line that says `Device` and make a note of the path to your USB stick. Here you can see our path is `/dev/sdb`. YOUR'S MAY BE DIFFERENT.
 
 2. Flash the USB stick with latest ubuntu version
 
 Run the following command in your terminal. Replace `<path/to/usb>` on both lines with the actual Device path to your USB stick.
 
 ```
-sudo umount <path/to/usb>
+sudo umount <path/to/usb>*
 sudo dd if=~/Downloads/ubuntu-26.04.1-desktop-amd64.iso of=<path/to/usb> bs=4M status=progress conv=fsync oflag=direct
 ```
+
+The finished command will look similar to this. YOUR'S MAY BE DIFFERENT.
+
+`sudo umount /dev/sdb*`
+`sudo dd if=~/Downloads/ubuntu-26.04.1-desktop-amd64.iso of=/dev/sdb bs=4M status=progress conv=fsync oflag=direct`
+
 The terminal will ask you to enter your password. This is the password you set up when first installing Ubuntu on the computer. Type in the password and press enter Wait for it to finish, it might take a while. 
 
 You've now successfully updated the Ubuntu software for your offline computer.
