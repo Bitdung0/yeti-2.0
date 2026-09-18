@@ -1,7 +1,9 @@
 # How to Set up Secure, Air-gapped Bitcoin Multisig with Bitcoin Core
 
 Read [START_HERE.md](START_HERE.md) first.
+
 Advisors: [CONTEXT_FOR_ADVISORS.md](CONTEXT_FOR_ADVISORS.md).
+
 Design: [FAQ.md](FAQ.md) and [THREAT_MODEL.md](THREAT_MODEL.md).
 
 ## Introduction
