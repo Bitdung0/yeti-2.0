@@ -53,7 +53,7 @@ Select your USB drive from the left hand side menu.
 
 ![Gnome Disks Utility Device Selection](./images/Disks-start.png)
 
-Next look at the line that says `Device` and make a note of the path to your USB stick. Here you can see our path is `/dev/sdb`. YOUR'S MAY BE DIFFERENT.
+Next look at the line that says `Device` and make a note of the path to your USB stick. Here you can see our path is `/dev/sdb`. YOURS MAY BE DIFFERENT.
 
 2. Flash the USB stick with latest ubuntu version
 
@@ -64,11 +64,11 @@ sudo umount <path/to/usb>*
 sudo dd if=~/Downloads/ubuntu-26.04.1-desktop-amd64.iso of=<path/to/usb> bs=4M status=progress conv=fsync oflag=direct
 ```
 
-The finished command will look similar to this. YOUR'S MAY BE DIFFERENT.
+The finished command will look similar to this. YOURS MAY BE DIFFERENT.
 
 `sudo umount /dev/sdb*`
 `sudo dd if=~/Downloads/ubuntu-26.04.1-desktop-amd64.iso of=/dev/sdb bs=4M status=progress conv=fsync oflag=direct`
 
-The terminal will ask you to enter your password. This is the password you set up when first installing Ubuntu on the computer. Type in the password and press enter Wait for it to finish, it might take a while. 
+The terminal will ask you to enter your password. This is the password you set up when first installing Ubuntu on the computer. Type in the password and press enter. Wait for it to finish, it might take a while. 
 
 You've now successfully updated the Ubuntu software for your offline computer.
