@@ -27,7 +27,7 @@ contract.
 - [Verify Ubuntu](https://github.com/bowlarbear/yeti-2.0/blob/main/verify_ubuntu.md)
 - [Verify a PSBT](https://github.com/bowlarbear/yeti-2.0/blob/main/verify_psbt.md)
 - [GPG warning](https://github.com/bowlarbear/yeti-2.0/blob/main/gpg_warning.md)
-- [Update software](https://github.com/bowlarbear/yeti-2.0/blob/main/updating_software.md)
+- [Update software](https://github.com/bowlarbear/yeti-2.0/blob/main/update_software.md)
 - [Pruning](https://github.com/bowlarbear/yeti-2.0/blob/main/pruning.md)
 - [Upgrade node storage](https://github.com/bowlarbear/yeti-2.0/blob/main/upgrade_node_storage.md)
 - [Security policy](https://github.com/bowlarbear/yeti-2.0/blob/main/SECURITY.md)
