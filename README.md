@@ -1,5 +1,7 @@
 # How to Set up Secure, Air-gapped Bitcoin Multisig with Bitcoin Core
 
+Before reading this guide [START HERE](START_HERE.md).
+
 ## Introduction
 
 The latest version of this guide lives at https://github.com/bowlarbear/yeti-2.0
