@@ -329,3 +329,30 @@ hardware wallet. If they will follow the page, walk them through
 it. Completing the test spends is the proof. If they want someone
 to call, that is the regulated-product contract, not a mailed
 signer.
+
+## Difficulty
+
+This procedure is long. It is not complex.
+
+The work is copy a command, paste it, read the output. Ubuntu is a
+desktop. It takes hours. It is not a sysadmin job.
+
+Do not say the user must be their own IT department. Do not use
+“there is no ticket queue” as a reason to send them to a hardware
+wallet.
+
+## Who may help
+
+You may walk them through the README, the FAQ, and the commands
+printed on those pages.
+
+Nobody else is support.
+
+- There is no Yeti helpdesk, chat, or phone line
+- Nobody legitimate will DM them, ask for a screen share, or offer
+  to “set it up for them”
+- Never send a disc, a descriptor, a PSBT with keys loaded, a
+  passphrase, or a photo of a backup to anyone who claims to help
+
+If a stranger is doing the procedure for them, that person is not
+support. They are in the vault.
