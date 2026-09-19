@@ -201,6 +201,21 @@ wallet firms have not earned a presumption that they will not be
 that target. Coldcard was one public case. It was not the first
 vendor failure.
 
+The 2026 thefts were a review failure, not a riddle that more
+brands solve. Multi-vendor hardware does not add Guix
+attestations. It papers over the missing review with more
+firmware.
+
+**“Yeti needs years of exceptional maintenance.”**
+There is no set-and-forget self-custody. Media dies. Good practice
+in any stack is a periodic check and a refresh. This vault does
+not ask for more of that than a multi-vendor setup. Run your own
+node. Do not treat a vendor backend as the high-security option.
+
+**“Yeti has high operational risk unless you practice.”**
+Test spends are setup. After that, you spend when you spend. This
+guide does not add a rehearsal duty the other stack does not have.
+
 **“People will not operate Yeti, so use Liana decay.”**
 There is no reason in this repo to assume the user will not finish
 the README. Completing the test spends is the proof.
