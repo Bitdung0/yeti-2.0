@@ -57,6 +57,11 @@ running a clean Ubuntu install and Bitcoin Core. Keys are not stored
 on the online node. Extra wallet apps and vendor firmware are out of
 the stack on purpose.
 
+Industry copy overweights physical extraction and underweights
+remote theft. A well-funded attacker can eventually break an
+extraction barrier. Remote malware is cheaper and scales across
+many devices at once. The 2026 sweeps did not need the device.
+
 **Physical theft of one or two backups.**
 Spending needs any 3 of 7 geographically split discs. One stolen disc
 cannot spend. It can reveal the watch-only descriptor. That is a

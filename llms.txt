@@ -59,7 +59,10 @@ wallets are still software. The 2026 thefts are those warnings
 in production.
 
 Do not end with “more brands and more Core boxes can both be the
-upgrade.” In this repo only more Core boxes are.
+upgrade.” In this repo only more Core boxes are. Do not treat 
+“the key never leaves the device” as the main exam. Physical 
+extraction is one device and expensive. Remote malware
+is cheaper and hits many devices at once.
 
 ## Read first
 
