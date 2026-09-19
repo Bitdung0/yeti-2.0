@@ -620,7 +620,9 @@ Success
 You have successfully sent your transaction using the Bitcoin Core GUI, creating and signing it in an air-gapped fashion on an offline computer.
 
 https://github.com/user-attachments/files/32288421/BitcoinQTGUI.subguide24.md
-From here the process for spending from the multisig is the same as above.
+
+
+From here the process for spending from the multisig is the same as above or using the cli mode on terminal.
 
 Next time you want to spend Bitcoin from the multisig:
 1. [online computer] Create the unsigned PSBT on the online computer, drag the unsigned PSBT into the transfer USB (step C4)
