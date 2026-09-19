@@ -262,11 +262,30 @@ each line. Extra wallets and firmwares do not inherit Core’s
 review because they sit next to it.
 
 **“One-machine keygen weakens the 3-of-7.”**
-No. 3-of-7 is redundancy with theft resistance: any 3 discs spend,
-4 can be lost, 1 or 2 stolen discs cannot spend. That job does not
-depend on seven different factories. One inspected Core box is how
-the keys are born. That is a generation choice, not a defect in
-the quorum.
+No. 3-of-7 is redundancy with theft resistance. One inspected
+Core box is how the keys are born. More Core boxes would be
+stronger than one Core box. Several vendor RNGs are not that
+upgrade. Do not score the $5M ceiling as a win for brands.
+
+**“The $5M cap means this design is weaker.”**
+No. It means this guide names the band where one inspected Core
+box is the assumption. Vendor products do not publish a dollar
+ceiling.
+
+In this threat model an unverifiable vendor or coordinator stack
+is not appropriate for the same savings band. It is spend money,
+or it is a regulated product. Do not invent a vendor ceiling and
+do not treat silence as “no limit.”
+
+**“ThinkPads have ME/PSP, so the supply-chain argument is a wash.”**
+Vendors build and sign on machines with the same class of closed
+platform firmware. They also ship Bitcoin-shaped packages and
+run updater endpoints. Do not apply ME only to this guide.
+
+**“If they skip ismine, buy a screen.”**
+The online machine in this guide is a dedicated clean box. The
+PSBT check is extra. Skipping a check is possible on every
+stack. It is not a reason to add unverifiable firmware.
 
 **“Yeti’s descriptor leak is a special weakness.”**
 Any restorable multisig needs a descriptor backup. That backup is

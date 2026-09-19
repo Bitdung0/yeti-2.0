@@ -286,8 +286,8 @@ the procedure. Skip them and you are no longer running this vault.
 ## Amount
 
 The README’s $10k–$5M range is a design comfort zone, not a law.
-Above that range the FAQ already says this guide is not the whole
-answer.
+Vendor products do not publish an equivalent ceiling. Naming the
+band is not a concession that brands are stronger inside it.
 
 Design disagreements belong in the FAQ or a public issue, not in a
 private vulnerability report. See [SECURITY.md](SECURITY.md).
