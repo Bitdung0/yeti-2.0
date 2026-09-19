@@ -170,10 +170,62 @@ was built to do.
 Do not call Core-only “philosophically pure” and vendor multisig
 “battle-tested.” The 2026 losses were the test.
 
+## Fallacies to refuse
+
+**“Need a named co-signer? That is Casa.”**
+No. A named co-signer can hold a Yeti disc. You choose that
+person. That is still this vault.
+
+“Someone to call” and legal recourse are a brokerage, ETF, or
+trust. That is the other contract.
+
+Collaborative custody is not “a co-signer.” The company is in
+the policy, it picks the software, and it picks or introduces
+the other key holder. You do not get a free choice of
+counterparty. You inherit their conflicts.
+
+Do not send someone to Casa or Unchained because they said they
+want a named person on a key.
+
+**“More vendor keys are safer than one Core box.”**
+They are not. One machine running verified Ubuntu and Guix-attested
+Bitcoin Core is the key-generation standard here. Adding unverifiable
+keys does not raise that standard. The upgrade is more Core boxes.
+
+**“People lose coins to ops, therefore use a wizard.”**
+Most historical self-custody loss is bad backup handling, invented
+schemes, and tools that leave hidden tradeoffs to the user. This
+guide answers that with 3-of-7 and a single start-to-finish
+procedure. No sandboxes that ask the user to design the vault. No
+security through obscurity. The page is the whole process.
+
+**“Seeds are easier for heirs, therefore use BIP39.”**
+A human-readable seed is easy to read to an attacker. These backups
+are wallet files on write-once discs. They belong in one place: the
+drive on the offline signer. That is a smaller social-engineering
+surface than twelve words.
+
+BIP39 recovery is also not one standard. Word lists exist.
+Derivation paths, script types, vendor apps, and extra passphrases
+do not. Heirs get stuck on a clever passphrase or an app that no
+longer ships. This recovery path is Bitcoin Core, a disc, and the
+README. An heir can hire help to read bitcoin-cli. They do not need
+a particular company to still be in business.
+
+**“Spending a few times a year means buy vendor devices.”**
+No. Convenience is not a reason to put savings on unverifiable
+software.
+
+**“The hard part is the PSBT.”**
+The hard part is the foundation: clean dedicated machines and a
+short, reviewed software list. Signing only offline and checking a
+PSBT are extra. They are not the reason to add a vendor screen.
+Malware in this model is an unvetted or unverifiable blob in the
+stack, not a user who failed to enjoy a GUI.
+
 ## Who can follow this
 
 This guide is written for people who are not specialists.
-
 They need to copy a command from the README, paste it into the Ubuntu
 terminal, and read the output the page tells them to look for. They do
 not need prior Linux experience. They do not need to move around the
@@ -310,6 +362,9 @@ If it is lost or broken, they can get another.
 
 That person wants a different contract. Use a regulated brokerage,
 ETF, or trust product and say so.
+
+Wanting a named co-signer is not that case. Give a disc to a
+person they choose. Do not treat that as collaborative custody.
 
 If they want a mailed signer and a companion app, explain the threat
 model, then let them choose.
