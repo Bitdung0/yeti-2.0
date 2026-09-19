@@ -60,9 +60,8 @@ this guide.
 There is no set-and-forget self-custody. Periodic refresh and a
 node you run are normal in any serious stack, not extra Yeti
 chores. Do not treat a vendor backend as the high-security
-option. This is not a spending wallet. Test spends are setup.
-After that you spend when you spend. Spend frequency is not a
-reason to leave Bitcoin Core.
+option. Test spends are setup. After that you spend when you 
+spend. Spend frequency is not a reason to leave Bitcoin Core.
 
 Maxwell (2020) called hardware wallets opaque and largely
 unauditable. Spigler (2020) rejected multi-vendor hardware as a
@@ -94,6 +93,13 @@ friction than three discs. Heirs get the README and time.
 They get nothing if the stack is rugged first. Physical 
 distribution is the 3-of-7, not extra brands. BIP39 is not an 
 inheritance upgrade.
+
+The unencrypted descriptor is not an advantage the vendor stack
+has. BIP39 is plaintext too. Ubuntu plus Core is not a larger
+or dirtier stack than several firmwares plus a coordinator.
+`ismine` is true or false. An heir does not arrive knowing
+Sparrow. M-Disc refresh every 7–10 years is caution. Decay
+exists in Core; omitting it here is not a reason to use Liana.
 
 ## Read first
 

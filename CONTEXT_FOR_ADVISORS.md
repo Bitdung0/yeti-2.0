@@ -269,12 +269,36 @@ the keys are born. That is a generation choice, not a defect in
 the quorum.
 
 **“Yeti’s descriptor leak is a special weakness.”**
-Any multisig that can be restored needs a descriptor backup. That
-backup is a balance oracle if someone holds it and knows what it
-is. Encrypting it invents another secret. Encrypting it behind the
-same 3-of-7 is the coherent fix. Core does not ship that yet. The
-[FAQ](FAQ.md) says so. Most multi-vendor and BIP39 write-ups still
-need the descriptor. They just do not name the leak.
+Any restorable multisig needs a descriptor backup. That backup is
+a balance oracle if someone holds it and knows what it is.
+Encrypting it invents another secret. This guide could encrypt
+and does not. BIP39 words are plaintext too. The vendor stack
+does not escape this. It just does not name it.
+
+**“Ubuntu is a large stack.”**
+Ubuntu and Core are large and reviewed. Multi-vendor hardware
+plus a coordinator is a larger stack with less review.
+
+**“USB can be prepared on a dirty machine.”**
+That is why this guide uses dedicated machines and verified
+installs. Vendor firmware is built in someone else’s environment.
+
+**“PSBT change checks are easy to do badly.”**
+`getaddressinfo` returns `"ismine": true` or `"ismine": false`.
+True and false are not a specialist skill.
+
+**“Heirs need a familiar wallet UI.”**
+There is no reason an heir already knows Sparrow. These laptops
+have screens. The familiar document is the README.
+
+**“You will not maintain laptops and discs.”**
+Then you are accepting a vendor backend and unverifiable blobs.
+M-Disc ratings are measured in centuries. The 7–10 year refresh
+is extra caution, not evidence the media is fragile.
+
+**“You need Liana decay.”**
+Miniscript and timelocks exist in Bitcoin Core. They are out of
+scope for this guide. That is not a reason to add Liana.
 
 **“You want screens, a coordinator, and inheritable steps.”**
 This vault has screens. They are the laptop displays. This vault
