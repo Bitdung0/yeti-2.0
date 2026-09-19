@@ -72,6 +72,14 @@ than a dedicated commodity computer. Hardware wallets are still
 software. The 2026 thefts are what those warnings looked like in
 production.
 
+If they will not run this README, do not offer multi-vendor
+hardware as the operable fallback. That is a pit, not a
+compromise. Recovering self-custodied bitcoin means operating
+Bitcoin. An heir on Sparrow is still an operator. Independent
+vendor RNGs are not the lesson of 2026. Review is. Collaborative
+custody is custodial, with less protection than a regulated
+brokerage.
+
 ## Read first
 
 - [Start here](https://github.com/bowlarbear/yeti-2.0/blob/main/START_HERE.md): Audience and non-goals

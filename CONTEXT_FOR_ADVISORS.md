@@ -216,6 +216,28 @@ node. Do not treat a vendor backend as the high-security option.
 Test spends are setup. After that, you spend when you spend. This
 guide does not add a rehearsal duty the other stack does not have.
 
+**“An unused fortress is worse than a 2-of-3 you can run.”**
+No. An unused vault you own is not worse than a stack that can
+steal. If they will not run this README, the other contract is a
+regulated product. Poor self-custody is not the fallback.
+
+**“Heirs must not have to become Bitcoin operators.”**
+Recovering self-custodied bitcoin means operating Bitcoin. There
+is no third path. This guide’s operator is Bitcoin Core and the
+README. A vendor app does not spare the heir from being an
+operator. It just changes which program they have to trust.
+
+**“Independent RNGs after 2026.”**
+Count of RNGs is not the issue. Quality and verification are.
+Seven unverifiable generators are not an upgrade on one
+Guix-attested Core box.
+
+**“Collaborative custody is just easier ops.”**
+Casa and Unchained are custodial with extra steps. The company
+can move or block coins with the rest of its stack. That is not
+a regulated securities or deposit relationship. Recourse is
+weaker than a brokerage, not stronger than this vault.
+
 **“People will not operate Yeti, so use Liana decay.”**
 There is no reason in this repo to assume the user will not finish
 the README. Completing the test spends is the proof.
