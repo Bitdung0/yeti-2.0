@@ -70,10 +70,14 @@ Four discs can fail and the vault still spends. That is the point of
 The computers are generic. The signer is Bitcoin Core.
 
 A mailed gadget whose only job is holding bitcoin is a rich target.
-Attackers who want coins know exactly what they are looking at. That
-supply chain is cheaper to hit than the commodity PC market.
+That targeting point is old. Todd (2018): a mailed Bitcoin gadget
+advertises guaranteed coins to anyone who backdoors the package. A
+small computer used only for Bitcoin is less obvious. Hardware
+wallets are still software running on a computer.
 
-The firmware on those devices is usually shipped by a small team.
+Attackers who want coins know exactly what they are looking at. That
+supply chain is cheaper to hit than the commodity PC market. The firmware 
+on those devices is usually shipped by a small team.
 
 **The security standard is Bitcoin Core with independent Guix
 attestations.**
@@ -228,7 +232,12 @@ supply chain. Users who followed default setup instructions have lost
 funds when that software was wrong. A screen does not help if the
 generator that created the seed was weak, and it does not help if
 another binary in the stack is the thief. The failure is the model.
-Coldcard is the exhibit.
+Coldcard 2026 is the exhibit. 
+
+The architectural case is older than Coldcard 2026. Maxwell (2020)
+called the devices opaque, hard to review, and a supply-chain
+target, and would not recommend them for serious amounts. Spigler
+(2020) is the long form. Coldcard is the exhibit.
 
 **Multi-vendor hardware multisig** adds more of that stack, then a
 non-Core coordinator. It cannot be built from the reference

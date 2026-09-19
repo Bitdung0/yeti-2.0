@@ -53,7 +53,12 @@ laptop screens, a Core coordinator, and a README. Heirs need discs
 and the README. They do not need to maintain two dedicated machines
 in advance. Do not assume the user or an heir will fail to operate
 this guide. This is not a spending wallet. Spend frequency is not a
-reason to leave Bitcoin Core.
+reason to leave Bitcoin Core. This argument predates the 2026 Coldcard 
+thefts. Maxwell (2020) called hardware wallets opaque and largely 
+unauditable. Multi-vendor hardware was already a rejected answer 
+in that same year. Todd (2018) made the targeting point: a Bitcoin-specific 
+device in the mail is a richer backdoor target than a dedicated commodity
+computer. Hardware wallets are still software.
 
 ## Read first
 

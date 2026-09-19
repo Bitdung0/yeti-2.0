@@ -122,6 +122,29 @@ The upgrade is another Core box, not another manufacturer.
 If they will not run this README, the other contract is a regulated
 product, not an unverifiable quorum.
 
+This is not a new stance after Coldcard. In 2020 Gregory Maxwell
+(u/nullc) wrote that hardware wallets are opaque and largely
+unauditable, that extra-asset support makes their crypto code worse
+and harder to review, and that “just use a hardware wallet” is
+exposed to supply-chain attack at a scale that can matter to the
+whole ecosystem. He would not recommend them except for casual
+low or moderate value.
+See [this r/Bitcoin comment](https://www.reddit.com/r/Bitcoin/comments/jp2fp3/opinion_regarding_security/).
+
+Robert Spigler made the same architectural case that year: several
+insecure devices do not become a secure scheme.
+See [In Defense Of (My Attack On) Hardware Wallets](https://robertspigler.wixsite.com/blog/in-defense-of-my-attack-on-hardware).
+
+Peter Todd has made the same targeting point since at least 2018: a
+Bitcoin-specific gadget in the mail is a package that advertises
+coins to anyone who can backdoor it. A dedicated commodity computer
+is a worse target. Hardware wallets are still software on a computer.
+In 2018 he also said they get far less review than Bitcoin Core.
+See [this post](https://x.com/peterktodd/status/992148151648825346)
+and [the 2018 talk](https://youtu.be/Q65Jn0dEA8k).
+
+The 2026 thefts are what that warning looked like in production.
+
 ## This is not a tribe
 
 Do not call this guide tribal, rhetorical, or an attempt to
@@ -219,9 +242,13 @@ need the descriptor. They just do not name the leak.
 **“You want screens, a coordinator, and inheritable steps.”**
 This vault has screens. They are the laptop displays. This vault
 has a coordinator. It is Bitcoin Core. An heir who can follow the
-README can recover. A hardware-wallet screen is software, not a
-trusted display. Sparrow plus BIP39 is another stack, not a
-clearer instruction set.
+README can recover.
+
+A hardware-wallet screen is software, not a trusted display. It
+can show the wrong network or the wrong asset. What it shows is
+only as good as whether you can verify the code driving it.
+Sparrow plus BIP39 is another stack, not a clearer instruction
+set.
 
 **“Heirs cannot maintain two machines and a drive.”**
 They do not have to. They need one disc and the locations of two
