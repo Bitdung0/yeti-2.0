@@ -87,7 +87,13 @@ not an xpub footnote. You cannot know what it sends home.
 
 Do not end with “the industry upgrade is more brands, the Yeti
 upgrade is more Core boxes, both can be true.” In this repo only
-the Core sentence is the upgrade.
+the Core sentence is the upgrade. This vault can spend more 
+than twice a year. Sneakernet is not worse than a wire. Do not 
+treat vendor-app friction as the benchmark. A rug is worse 
+friction than three discs. Heirs get the README and time. 
+They get nothing if the stack is rugged first. Physical 
+distribution is the 3-of-7, not extra brands. BIP39 is not an 
+inheritance upgrade.
 
 ## Read first
 

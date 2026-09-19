@@ -288,8 +288,29 @@ set.
 
 **“Spending a few times a year is painful by design.”**
 No. Moving a large amount of bearer cash on a computer should not
-feel like a tap-to-pay app. This is a vault. The spend path is
-the cost of the amount, not a defect.
+feel like a tap-to-pay app. This is a vault. You can spend more
+than twice a year. A couple of disc-and-USB trips is less work
+than a wire. Do not use a vendor-app tap as the comparison.
+
+**“Lower friction is worth residual firmware risk.”**
+No. A rug is more operational friction than loading three discs.
+
+**“Heirs who dislike Linux need vendor devices.”**
+This vault is for the person who holds the coins. An heir who
+can read the README can recover. They will have time. If the
+stack is rugged first, the heir gets nothing.
+
+**“Device diversity plus physical distribution.”**
+This vault already splits backups across places. That is the
+3-of-7. Adding brands is not more distribution. It is more
+software.
+
+**“Screens, seed phrases, and an ecosystem of tools.”**
+The screens are on the laptops. Bitcoin Core does not use BIP39.
+This guide does not either. Human-readable seeds and a
+non-memory-hard KDF are how people memorize a load-bearing
+secret or treat a passphrase as armor. That is not an inheritance
+feature.
 
 **“The coordinator may also see xpubs.”**
 You cannot know what a non-Core coordinator sends home. Some of
