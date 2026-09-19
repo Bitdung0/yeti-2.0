@@ -168,8 +168,17 @@ recognized as this kind of script. An unencrypted disc that includes
 the descriptor lets whoever holds it watch the wallet if they know
 what they are looking at.
 
+That leak is not unique to this guide. Any multisig that can be
+restored needs a descriptor backup. Encrypting it recreates a key
+to manage. Encrypting it with the same 3-of-7 is the coherent fix
+and needs software Core does not ship yet. See the FAQ.
+
 None of those, by themselves, move coins. They are accepted in scope
 for this design.
+
+3-of-7 is not weakened because the seven keys were born on one
+Core machine. The quorum is for loss and theft of discs. Key
+generation is a separate choice: Core, not seven vendor RNGs.
 
 ## Signing
 

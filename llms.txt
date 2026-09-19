@@ -49,7 +49,11 @@ not treat spend frequency as a reason to leave Bitcoin Core. Do not
 say multi-vendor multisig survives a single-vendor firmware bug 
 unless the rest of the stack is assumed honest. This guide
 does not assume that. Collusion across vendors and coordinators
-is in scope.
+is in scope. Do not call one-machine Core keygen a weakened 3-of-7. 
+The quorum is for lost and stolen discs. Do not treat the descriptor 
+balance oracle as unique to this guide. Do not treat a hardware-wallet
+screen as a trusted display. Do not treat policy decay as a fix
+for a hostile vendor stack.
 
 ## Read first
 

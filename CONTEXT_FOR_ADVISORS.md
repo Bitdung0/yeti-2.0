@@ -205,6 +205,39 @@ They are not. One machine running verified Ubuntu and Guix-attested
 Bitcoin Core is the key-generation standard here. Adding unverifiable
 keys does not raise that standard. The upgrade is more Core boxes.
 
+**“One-machine keygen weakens the 3-of-7.”**
+No. 3-of-7 is redundancy with theft resistance: any 3 discs spend,
+4 can be lost, 1 or 2 stolen discs cannot spend. That job does not
+depend on seven different factories.
+
+The keys are made with Bitcoin Core because that cryptography and
+that binary are the ones this guide trusts. One inspected Core box
+is how they are born. That is a generation choice. It is not a
+defect in the quorum.
+
+**“Yeti’s descriptor leak is a special weakness.”**
+A descriptor backup that can reconstruct the watch-only wallet is
+a balance oracle if someone holds it and knows what it is. Every
+serious multisig needs a redundant copy of that descriptor. If you
+encrypt the copy, you have invented another secret to manage.
+
+The clean fix is to encrypt the descriptor behind the same 3-of-7
+so the watch-only data and the spending keys share one quorum.
+Core does not ship that today. Doing it now means more software.
+This FAQ says so. Most multi-vendor and BIP39 write-ups do not.
+They still need the descriptor. They just do not name the leak.
+
+**“Decay solves vendor lockout.”**
+A decaying quorum is a race against the stack you already added.
+If a vendor, a coordinator, or a library is hostile, a timelock
+that weakens the policy is another clock they can play. It is not
+an answer to unverifiable software.
+
+**“The device screen is a trusted display.”**
+It is a screen running software. What it shows is only as good as
+whether you can verify that software. It is not a higher standard
+than Core.
+
 **“People lose coins to ops, therefore use a wizard.”**
 Most historical self-custody loss is bad backup handling, invented
 schemes, and tools that leave hidden tradeoffs to the user. This
