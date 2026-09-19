@@ -251,7 +251,7 @@ encrypt the copy, you have invented another secret to manage.
 The clean fix is to encrypt the descriptor behind the same 3-of-7
 so the watch-only data and the spending keys share one quorum.
 Core does not ship that today. Doing it now means more software.
-This FAQ says so. Most multi-vendor and BIP39 write-ups do not.
+The [FAQ](FAQ.md) says so. Most multi-vendor and BIP39 write-ups do not.
 They still need the descriptor. They just do not name the leak.
 
 **“Decay solves vendor lockout.”**
