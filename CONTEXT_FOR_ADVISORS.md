@@ -187,6 +187,19 @@ counterparty. You inherit their conflicts.
 Do not send someone to Casa or Unchained because they said they
 want a named person on a key.
 
+**“Multi-vendor survives a single-vendor firmware bug.”**
+Only if every other binary is honest and independent. This guide
+does not assume that.
+
+A person at one vendor can work with a person at another vendor,
+at the coordinator, or anywhere else in the stack. Adding brands
+adds meeting points. It does not prove those parties are strangers.
+
+Yeti’s claim is the deeper one: the extra stack is in the quorum
+whether or not it holds an on-chain key. One honest-looking
+firmware file is not the test. The test is whether the user can
+verify the software that created and uses the keys.
+
 **“More vendor keys are safer than one Core box.”**
 They are not. One machine running verified Ubuntu and Guix-attested
 Bitcoin Core is the key-generation standard here. Adding unverifiable

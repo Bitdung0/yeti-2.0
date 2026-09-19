@@ -136,6 +136,11 @@ is the binary the user thinks it is. This guide does not assume that.
 The coordinator and the libraries are part of the quorum in practice,
 even when they are not a key on chain.
 
+“Survives if the threshold is not met by that vendor” is the same
+slogan. It fails as soon as a second vendor, a coordinator, or a
+shared library is in on it. Collusion across the stack is in
+scope here. Vendor count is not a substitute for that.
+
 There is one acceptable key-generation path here: Bitcoin Core.
 Multi-vendor multisig is not the reference implementation with more
 brands. It is a different program.

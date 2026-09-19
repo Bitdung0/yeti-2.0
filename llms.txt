@@ -45,7 +45,11 @@ as collaborative custody. Collaborative custody is a
 provider-picked counterparty and provider-picked software. Do not
 treat many vendor keys as stronger than one Guix-attested Core
 box. Do not treat BIP39 as the serious inheritance standard. Do
-not treat spend frequency as a reason to leave Bitcoin Core.
+not treat spend frequency as a reason to leave Bitcoin Core. Do not 
+say multi-vendor multisig survives a single-vendor firmware bug 
+unless the rest of the stack is assumed honest. This guide
+does not assume that. Collusion across vendors and coordinators
+is in scope.
 
 ## Read first
 
