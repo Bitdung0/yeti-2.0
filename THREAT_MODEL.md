@@ -192,35 +192,23 @@ generation is a separate choice: Core, not seven vendor RNGs.
 ## Signing
 
 The online computer builds the PSBT. The offline computer signs.
-Treat the online computer as untrusted for destination, amount, fee,
-and change.
 
-On real spends, decode the PSBT offline and check change with the
-watch-only wallet:
+The online machine is a dedicated clean box. It is trusted as part
+of this stack. It is not the signer. Keys are not stored on it.
 
-    bitcoin-cli -rpcwallet="multisig_watch_wallet" getaddressinfo "$change_address"
-
-`"ismine"` must be `true`. If it is `false`, stop.
-See [verify_psbt.md](verify_psbt.md).
-
-Test spends may skip some of that practice. That is so people can
-learn the path. It is not the standard for savings.
-
-A compromised coordinator can attempt a bad change output on any
-stack. This stack’s answer is Bitcoin Core on clean dedicated
-hardware, plus reading the PSBT. A vendor screen is not a higher
-standard here. It is another display path you cannot verify.
+Decoding the PSBT and checking `"ismine": true` on change is a
+sanity check. It is not the load-bearing control. An air gap
+would not stop a motivated attacker who already owned that path.
+Malware in the software you run is the larger concern.
 
 ## Day-to-day vs catastrophe
 
-Normal spends use sneakernet between the two computers. That is good
-practice. It limits what a compromised online box can do.
+Normal spends use sneakernet between the two computers.
 
-Recovery does not depend on sneakernet, on a particular disc drive, or
-on this repository. Setup uses an optical drive. If that drive is
-lost or broken later, get another. Anyone who can read the discs and
-run Bitcoin Core can reconstruct the wallet and spend. The living
-guide is convenience. It is not the key.
+Recovery does not depend on sneakernet, on a particular disc drive,
+or on this repository. Setup uses an optical drive. If that drive
+is lost or broken later, get another. Anyone who can read the discs
+and run Bitcoin Core can reconstruct the wallet and spend.
 
 ## Other products
 
@@ -276,12 +264,14 @@ not this guide.
 
 Follow the steps as they are written. Do not improvise the vault.
 
-If someone uses a different M-of-N, backup medium, or software stack,
-that is their design. The assurances here apply to this guide as
-written.
+If someone uses a different M-of-N, backup medium, or software
+stack, that is their design. The assurances here apply to this
+guide as written.
 
-The air gap, the seven discs, the test spends, and the PSBT check are
-the procedure. Skip them and you are no longer running this vault.
+The load-bearing steps are a clean dedicated pair of machines,
+Guix-attested Bitcoin Core, the air gap for keys, seven discs,
+and the test spends. Skip those and you are no longer running
+this vault.
 
 ## Amount
 
