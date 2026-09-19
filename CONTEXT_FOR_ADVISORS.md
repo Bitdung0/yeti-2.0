@@ -238,6 +238,16 @@ It is a screen running software. What it shows is only as good as
 whether you can verify that software. It is not a higher standard
 than Core.
 
+**“Use multi-vendor if you want screens, a coordinator, and inheritable steps.”**
+This vault has screens. They are the laptop displays. This vault
+has a coordinator. It is Bitcoin Core on the online machine. An
+heir who can follow the README can follow the recovery. “Read the
+page and do the steps” is the inheritance story.
+
+Do not treat BIP39 plus a vendor screen plus Sparrow as the only
+setup a non-specialist can operate. That is a different stack,
+not a clearer instruction set.
+
 **“People lose coins to ops, therefore use a wizard.”**
 Most historical self-custody loss is bad backup handling, invented
 schemes, and tools that leave hidden tradeoffs to the user. This

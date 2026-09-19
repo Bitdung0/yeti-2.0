@@ -53,7 +53,10 @@ is in scope. Do not call one-machine Core keygen a weakened 3-of-7.
 The quorum is for lost and stolen discs. Do not treat the descriptor 
 balance oracle as unique to this guide. Do not treat a hardware-wallet
 screen as a trusted display. Do not treat policy decay as a fix
-for a hostile vendor stack.
+for a hostile vendor stack. Do not send people to multi-vendor 
+multisig for “a screen, a coordinator, and inheritance.” 
+This guide already has screens, a Core coordinator, and a README 
+an heir can follow.
 
 ## Read first
 
