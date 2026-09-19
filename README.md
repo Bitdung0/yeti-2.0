@@ -519,7 +519,107 @@ rfkill block bluetooth
 ```
 sudo swapoff -a
 ```
+# BitcoinQT_GUI_Psbt_Guide
+Create and Sign a Multisig PSBT in Bitcoin Core using GUI 
 
+
+Download this guide
+
+https://github.com/user-attachments/files/32288421/BitcoinQTGUI.subguide24.md
+
+Create and Sign a Multisig PSBT in Bitcoin Core (bitcoin-qt)
+Online Computer
+Load your Multisig_watch_wallet in Bitcoin Core (bitcoin-qt).
+
+Click the Send tab.
+
+In the Pay To field, enter the destination Bitcoin address.
+
+Click Create Unsigned.
+
+Save the file as unsigned.psbt to your desktop.
+
+Copy unsigned.psbt to your Transaction USB drive.
+
+Offline Computer
+Open Bitcoin Core (bitcoin-qt).
+
+Press File → Close All Wallets.
+
+Delete all files in the .bitcoin/wallets/ directory.
+
+Copy your 3 wallet files (keys) into the .bitcoin/wallets/ folder.
+
+In Bitcoin Core:
+
+Press File → Open Wallet.
+
+Repeat this for each of the 3 wallet files you copied.
+
+After opening all 3 wallets, you will see a tab in the top-right corner allowing you to switch between them.
+
+Insert your Transaction USB into the offline PC.
+
+Copy and paste unsigned.psbt from the USB to your desktop.
+
+Sign with Wallet 1
+In Bitcoin Core:
+
+Use the top-right tab to select the first wallet you want to sign with.
+
+Press File → Load PSBT from File.
+
+Navigate to your desktop and load unsigned.psbt.
+
+A window will pop up with the transaction information.
+
+Press Sign Tx.
+
+After signing, save the transaction as signed.psbt to your desktop.
+
+Sign with Wallet 2
+Use the top-right tab to select the second wallet.
+
+Press File → Load PSBT from File.
+
+Navigate to your desktop and load signed.psbt.
+
+A window will pop up with the transaction information.
+
+Press Sign Tx.
+
+After signing, save the transaction as signed.psbt to your desktop, replacing the previous file.
+
+Sign with Wallet 3
+Use the top-right tab to select the third wallet.
+
+Press File → Load PSBT from File.
+
+Navigate to your desktop and load signed.psbt.
+
+A window will pop up with the transaction information.
+
+Press Sign Tx.
+
+After signing, save the transaction as signed.psbt to your desktop, replacing the previous file.
+
+After the last signature, the transaction window will change color from yellow to green, and the Broadcast button will become available. However, this computer is offline, so you will need to copy the signed.psbt from the desktop to your Transaction USB.
+
+Online Computer (Final Step)
+Copy signed.psbt from the Transaction USB to your desktop.
+
+Open Bitcoin Core (bitcoin-qt).
+
+Press File → Open Wallet → choose Multisig_watch_wallet.
+
+Press File → Load PSBT from File → load the file signed.psbt from your desktop.
+
+After the transaction window opens, press Broadcast Tx.
+
+Success
+You have successfully sent your transaction using the Bitcoin Core GUI, creating and signing it in an air-gapped fashion on an offline computer.
+
+https://github.com/user-attachments/files/32288421/BitcoinQTGUI.subguide24.md
 From here the process for spending from the multisig is the same as above.
 
 Next time you want to spend Bitcoin from the multisig:
