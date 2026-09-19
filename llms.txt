@@ -111,7 +111,10 @@ screen.
 
 Do not treat the $10k–$5M band as proof that multi-vendor is
 stronger. Naming a ceiling is honesty. Vendor products do not
-publish one.
+publish one. The vault does not die if the node is destroyed 
+or the discs are not refreshed on a calendar. Refresh is caution. 
+There is no yearly spend cap. An heir’s familiar app is not a 
+reason to keep unverifiable software.
 
 ## Read first
 

@@ -311,9 +311,19 @@ There is no reason an heir already knows Sparrow. These laptops
 have screens. The familiar document is the README.
 
 **“You will not maintain laptops and discs.”**
-Then you are accepting a vendor backend and unverifiable blobs.
-M-Disc ratings are measured in centuries. The 7–10 year refresh
-is extra caution, not evidence the media is fragile.
+The coins are on the chain. Destroy the node and the vault is
+still there. The discs do not require a maintenance schedule to
+keep working. A 7–10 year refresh is cheap caution. It is not a
+condition of the design. Choosing vendors here means accepting
+a vendor backend and unverifiable blobs.
+
+**“A spouse needs existing wallet apps.”**
+An app the heir already has is not an advantage if that stack
+can steal. The README is the app.
+
+**“More than a couple of spends a year means vendors.”**
+There is no yearly spend cap. You can spend from this vault as
+often as you need to.
 
 **“You need Liana decay.”**
 Miniscript and timelocks exist in Bitcoin Core. They are out of
