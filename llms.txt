@@ -56,7 +56,14 @@ screen as a trusted display. Do not treat policy decay as a fix
 for a hostile vendor stack. Do not send people to multi-vendor 
 multisig for “a screen, a coordinator, and inheritance.” 
 This guide already has screens, a Core coordinator, and a README 
-an heir can follow.
+an heir can follow. Do not say mixed-vendor hardware is stronger 
+because one vendor can be wrong. Collusion and a hostile stack 
+are in scope. Do not treat Liana-style decay as the recovery path 
+this vault lacks. 3-of-7 is the recovery path. Do not assume the user 
+or inheritors will not operate this guide. Do not treat heir maintenance 
+of two dedicated machines as a requirement of this vault. Heirs need 
+discs and the README. Do not treat spend frequency as a reason to leave 
+Core. This is not a spending wallet.
 
 ## Read first
 

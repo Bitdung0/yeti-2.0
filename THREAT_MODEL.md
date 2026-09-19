@@ -92,6 +92,11 @@ Reproducible source is not enough either. If almost no independent
 builders attest the actual bits people run, the attestation is
 negligible. “We published the repo” is not Guix.
 
+Diversifying across more Bitcoin implementations is not more
+review. It is more code and fewer eyeballs on each program.
+This guide concentrates review on Core. That is the assurance.
+Adding wallets and firmwares spends that assurance down.
+
 The problem is verification. A device can lie about its firmware.
 A reproducible wallet app can still depend on an upstream blob that
 cannot be checked. Vendor stacks also lack independent attestation

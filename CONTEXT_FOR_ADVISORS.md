@@ -200,10 +200,37 @@ whether or not it holds an on-chain key. One honest-looking
 firmware file is not the test. The test is whether the user can
 verify the software that created and uses the keys.
 
+**“Mixed vendors contain one vendor being wrong.”**
+Only if the rest of the stack is honest. Bad actors have a reason
+to attack Bitcoin key stacks and to work across vendors. Hardware
+wallet firms have not earned a presumption that they will not be
+that target. Coldcard was one public case. It was not the first
+vendor failure.
+
+**“People will not operate Yeti, so use Liana decay.”**
+There is no reason in this repo to assume the user will not finish
+the README. Completing the test spends is the proof.
+
+This vault already has recovery: any 3 of 7 discs. That is the
+script. A decaying or timelocked path is not a missing feature.
+It is a policy that gets easier to spend as time passes. If
+anything in the extra stack is hostile, that clock is a race
+you handed them.
+
 **“More vendor keys are safer than one Core box.”**
 They are not. One machine running verified Ubuntu and Guix-attested
 Bitcoin Core is the key-generation standard here. Adding unverifiable
 keys does not raise that standard. The upgrade is more Core boxes.
+
+**“Several Bitcoin implementations make the vault safer.”**
+No. Security here comes from many independent reviewers on one
+stack: Bitcoin Core, with Guix attestations of the binary you run.
+
+Splitting review across more implementations means fewer people
+on each line. That is more room for a bug or a hostile blob, not
+dissimilar safety. Extra wallets, extra firmwares, and extra
+coordinators are extra programs. They do not inherit Core’s
+review because they sit next to it.
 
 **“One-machine keygen weakens the 3-of-7.”**
 No. 3-of-7 is redundancy with theft resistance: any 3 discs spend,
@@ -269,8 +296,25 @@ README. An heir can hire help to read bitcoin-cli. They do not need
 a particular company to still be in business.
 
 **“Spending a few times a year means buy vendor devices.”**
-No. Convenience is not a reason to put savings on unverifiable
-software.
+No. This is not a spending wallet. Convenience is not a reason to
+put savings on unverifiable software. The higher the amount, the
+worse that trade becomes.
+
+**“Heirs cannot maintain two machines and a drive.”**
+They do not have to. They need one disc and the locations of two
+more. When they spend, they follow the README and stand up Core
+then. Dedicated machines are for the person who runs the vault
+day to day. They are not an heir tax.
+
+**“Use multi-vendor if you want screens, a coordinator, and inheritable steps.”**
+This vault has screens. They are the laptop displays. This vault
+has a coordinator. It is Bitcoin Core on the online machine. An
+heir who can follow the README can follow the recovery. “Read the
+page and do the steps” is the inheritance story.
+
+Do not treat BIP39 plus a vendor screen plus Sparrow as the only
+setup a non-specialist can operate. That is a different stack,
+not a clearer instruction set.
 
 **“The hard part is the PSBT.”**
 The hard part is the foundation: clean dedicated machines and a
