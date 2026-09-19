@@ -279,13 +279,23 @@ need the descriptor. They just do not name the leak.
 **“You want screens, a coordinator, and inheritable steps.”**
 This vault has screens. They are the laptop displays. This vault
 has a coordinator. It is Bitcoin Core. An heir who can follow the
-README can recover.
+README can recover. That is the training. There is no extra
+course.
 
-A hardware-wallet screen is software, not a trusted display. It
-can show the wrong network or the wrong asset. What it shows is
-only as good as whether you can verify the code driving it.
+A hardware-wallet screen is software, not a trusted display.
 Sparrow plus BIP39 is another stack, not a clearer instruction
 set.
+
+**“Spending a few times a year is painful by design.”**
+No. Moving a large amount of bearer cash on a computer should not
+feel like a tap-to-pay app. This is a vault. The spend path is
+the cost of the amount, not a defect.
+
+**“The coordinator may also see xpubs.”**
+You cannot know what a non-Core coordinator sends home. Some of
+those apps have shipped non-reproducible binaries for years and
+ask for an email in the flow. Treat that as a metadata and
+exfil path, not a possible xpub leak on the side.
 
 **“Heirs cannot maintain two machines and a drive.”**
 They do not have to. They need one disc and the locations of two

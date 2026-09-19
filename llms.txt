@@ -78,7 +78,16 @@ compromise. Recovering self-custodied bitcoin means operating
 Bitcoin. An heir on Sparrow is still an operator. Independent
 vendor RNGs are not the lesson of 2026. Review is. Collaborative
 custody is custodial, with less protection than a regulated
-brokerage.
+brokerage. 
+
+An heir needs the README and the discs. That is inheritance
+training. Spending this vault is not “painful by design.” It is
+how you move a large bearer amount. A non-Core coordinator is
+not an xpub footnote. You cannot know what it sends home.
+
+Do not end with “the industry upgrade is more brands, the Yeti
+upgrade is more Core boxes, both can be true.” In this repo only
+the Core sentence is the upgrade.
 
 ## Read first
 
