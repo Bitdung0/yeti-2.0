@@ -4,7 +4,7 @@
 
 2. Follow the steps as they are written. Do not improvise. 
 
-3. If you need legal recourse, a named custodian, or "someone to call" this guide is the wrong tool. Use a regulated brokerage/ETF/trust product instead. However, that is not Bitcoin self-custody, it is a different kind of contract.
+3. If you need legal recourse, a name branded custodian, or "someone to call" this guide is the wrong tool. Use a regulated brokerage/ETF/trust product instead. However, that is not Bitcoin self-custody, it is a different kind of contract.
 
 4. You do not need to be a Linux user. Ubuntu is a desktop, like Windows. The terminal work is copy the command from the page and paste it, read the output. You do not need to navigate directories by hand.
 
